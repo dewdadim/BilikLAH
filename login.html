@@ -19,7 +19,8 @@
     <div class="wrapper2">
         <h1 id="welcome2">Welcome Back!</h1>
         <img class="signIcon" src="img/assets/house.png" alt="bilikLAH">
-        <form class="register">
+
+        <form class="register" action="login.php" method="post">
 
             <label for="name" ><h3>Email</h3></label>
             <input type="text" name="email" required><br>
@@ -27,11 +28,6 @@
             <label for="password"><h3>Password</h3></label>
             <input type="password" name="password" required><br>
 
-            <select name="type" id="type">
-            <option value="customer" name="customer" value="Customer">Customer</option>
-            <option value="owner" name="owner" value="Owner">Owner</option>
-            </select>
-            
             <input type="submit" value="Log in">
         </form>
 </div>
