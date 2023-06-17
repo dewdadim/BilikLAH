@@ -42,25 +42,25 @@
 
 
   if ($link->query($mysql_query1) === TRUE) {
-    echo "Table Customer is created successfully.". "<br>" ;
+    // echo "Table Customer is created successfully.". "<br>" ;
   } else {
     echo "Error creating Customer table: "."<br>". $link->error;
   }
 
   if ($link->query($mysql_query2) === TRUE) {
-    echo "Table Owner is created successfully."."<br>" ;
+    // echo "Table Owner is created successfully."."<br>" ;
   } else {
     echo "Error creating Owner table: "."<br>" . $link->error;
   }
 
   if ($link->query($mysql_query3) === TRUE) {
-    echo "Table Room is created successfully."."<br>";
+    // echo "Table Room is created successfully."."<br>";
   } else {
     echo "Error creating Room table: "."<br>" . $link->error;
   }
 
   if ($link->query($mysql_query4) === TRUE) {
-    echo "Table Booking is created successfully."."<br>";
+    // echo "Table Booking is created successfully."."<br>";
   } else {
     echo "Error creating Booking table: "."<br>" . $link->error;
   }
