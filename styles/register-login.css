@@ -1,0 +1,132 @@
+@import url(style.css);
+
+
+ /* Signup position*/
+#welcome{
+    margin-top: 30px;
+    font-size: 45px;
+}
+
+          /* Styling the Form background */
+
+.wrapper{
+float: none;
+text-align: center;
+width: 450px;
+height: 520px;
+margin: auto;
+margin-top: 150px;
+background-color: var(--primary);
+border-radius: 30px;
+margin-right: auto;
+margin-left: auto;
+
+}
+h3{
+    color: var(--white);
+
+
+          /* Styling the Form  */
+}
+.wrapper form{
+    width: 300px;
+    margin-left: 20px;
+    font-family: 'Rubik', sans-serif; 
+    margin-right: auto;
+    margin-left: auto;  
+}
+.wrapper form label{
+    display: flex;
+    margin-top: 5px;
+    font-size: 18px;
+}
+.wrapper form input{
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border: 1px solid var(--white);
+    border-radius: 3px;
+    outline: none;
+}
+.wrapper form [type="submit"]{
+    color: var(--white);
+    border: 0px;
+    margin: auto;
+    border-radius: 5px;
+    margin-top: 20px;
+    float: right;
+    background-color: var(--secondary);
+}
+      /* Position of the 3D House */
+
+.container{
+    position: relative;
+    height: 100px;
+    float: left;
+
+}
+.Column{
+    float: right;
+    width: 1300px;  
+    margin-top: -400px;
+  }
+  /* Welcome icon */
+  .signIcon{
+    margin-top: 3px;
+    width: 50px;
+    height: 50px;
+}
+
+/* Log in Wrapper */
+.wrapper2{
+float: none;
+text-align: center;
+width: 400px;
+height: 450px;
+margin: auto;
+margin-top: 150px;
+background-color: var(--primary);
+border-radius: 30px;
+margin-right: auto;
+margin-left: auto;
+}
+.wrapper2 form{
+    width: 300px;
+    margin-left: 20px;
+    font-family: 'Rubik', sans-serif; 
+    margin-right: auto;
+    margin-left: auto;  
+}
+.wrapper2 form label{
+    display: flex;
+    margin-top: 15px;
+    font-size: 18px;
+}
+.wrapper2 form input{
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border: 1px solid var(--white);
+    border-radius: 3px;
+    outline: none;
+}
+.wrapper2 form [type="submit"]{
+    color: var(--white);
+    border: 0px;
+    margin: auto;
+    border-radius: 5px;
+    margin-top: 20px;
+    float: right;
+    background-color: var(--secondary);
+}
+select{
+    display: flex;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 15px;
+    border-radius: 5px;
+}
+#welcome2{
+    margin-top:30px ;
+    font-size: 40px;
+}
