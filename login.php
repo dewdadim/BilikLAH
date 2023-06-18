@@ -45,7 +45,7 @@ if (isset($_POST['email']))
     if ($found == TRUE)
     {
         if($_SESSION['status'] == 'customer')
-            header("Location: index.html");
+            header("Location: rooms.php");
         else
             header("Location: index.html");
     }

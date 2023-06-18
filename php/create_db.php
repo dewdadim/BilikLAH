@@ -29,8 +29,8 @@
   $mysql_query2 = "CREATE TABLE RoomOwner (ownerName VARCHAR (50), ownerEmail VARCHAR(40),
   ownerPhone VARCHAR(20), ownerPassword VARCHAR(15), PRIMARY KEY(ownerEmail))";
 
-  $mysql_query3 = "CREATE TABLE Room (roomID INT AUTO_INCREMENT, roomName VARCHAR (50),
-  roomDesc VARCHAR(150), roomCapacity INT, roomPrice INT, ownerEmail VARCHAR(40), PRIMARY KEY(roomID),
+  $mysql_query3 = "CREATE TABLE Room (roomID INT AUTO_INCREMENT, roomName VARCHAR (50), 
+  roomImg VARCHAR (50), roomCapacity INT, roomPrice INT, ownerEmail VARCHAR(40), PRIMARY KEY(roomID),
   FOREIGN KEY(ownerEmail) REFERENCES RoomOwner(ownerEmail))";
 
   $mysql_query4 = "CREATE TABLE Booking (bookingID INT AUTO_INCREMENT, dateBegin DATE,
