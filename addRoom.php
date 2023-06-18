@@ -1,3 +1,8 @@
+<?php
+    include('php/connect.php');
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,8 +21,8 @@
             </div>
             <div>
                 <ul class="nav-links">
-                    <li><a href="rooms_owner.php">Rooms</a></li>
-                    <li><a href="addRoom.html">My Booking</a></li>
+                    <li><a href="rooms_owner.php">My Rooms</a></li>
+                    <li><a href="addRoom.php">Add Room</a></li>
                     <li>
                         <?php
                             $name = $_SESSION['name'];

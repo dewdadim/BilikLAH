@@ -24,7 +24,7 @@
             <div>
                 <ul class="nav-links">
                     <li><a href="rooms_owner.php">My Rooms</a></li>
-                    <li><a href="addRoom.html">Add Room</a></li>
+                    <li><a href="addRoom.php">Add Room</a></li>
                     <li>
                         <?php
                             $name = $_SESSION['name'];
