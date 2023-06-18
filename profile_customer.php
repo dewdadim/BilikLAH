@@ -5,25 +5,16 @@ session_start();
 $customerName = $_POST['customerName'];
 $customerPhone = $_POST['customerPhone'];
 $customerPassword = $_POST['customerPassword'];
-$customerEmail = $_POST['customerEmail'];
+
 $id = $_SESSION['email'];
 
 $updateName = "UPDATE Customer SET customerName = '$customerName'  WHERE customerEmail = '$id'";
 $updatePhone = "UPDATE Customer SET  customerPhone = '$customerPhone' WHERE customerEmail = '$id'";
-$updatePassword = "UPDATE Customer SET  customerPassword = '$customerPassword' WHERE customerEmail = '$id";
-$updateEmail = "UPDATE Customer SET customerEmail = '$customerEmail' WHERE customerEmail = '$id'";
+$updatePassword = "UPDATE Customer SET  customerPassword = '$customerPassword' WHERE customerEmail = '$id'";
+
 
  if (isset($_POST['save-name'])){
     if (mysqli_query($connect,$updateName)) {
-        echo " <script>alert('Update SuccessfuL!');
-                window.location='profile_customer.php'</script> ";
-    } else {
-        echo "Error updating fields: " . mysqli_error($connect);
-    }
- }
-
- if (isset($_POST['save-email'])){
-    if (mysqli_query($connect,$updateEmail)) {
         echo " <script>alert('Update SuccessfuL!');
                 window.location='profile_customer.php'</script> ";
     } else {
@@ -93,51 +84,35 @@ $customer = mysqli_fetch_array($data);
 
 
 <section class="container">
-    <h1 class="profile" >Profile</h1>
+    <h1 class="profile">Customer Profile</h1>
 
     <div class="kedudukan">
         <form action="profile_customer.php" method="POST">
         <label for="customerName">Name :</label>
         <br>
-        <input type="text" id="customerName" name="customerName" >
+        <input class="cols=100" type="text" id="customerName" name="customerName">
         <button name="save-name">Save</button>  
-        
     </form>   
     </div>
       
     <div class="kedudukan">
         <form action="profile_customer.php" method="POST">
-        <label for="customerEmail">Email :</label>
+        <label for="customerPhone">Phone :</label>
         <br>
-        <input type="text" id="customerEmail" name="customerEmail" >
-        <button name="save-email">Save</button>
+        <input type="text" id="customerPhone" name="customerPhone" >
+        <button name="save-phone">Save</button>  
         </form>  
     </div>
     
     <div class="kedudukan">
         <form action="profile_customer.php" method="POST">
-        <label for="customerPhone">Email :</label>
-        <br>
-        <input type="number" id="customerPhone" name="customerPhone" >
-        <button name="save-phone">Save</button>
-        </form>  
-    </div>
-
-    <div class="kedudukan">
-        <form action="profile_customer.php" method="POST">
-        <label for="customerPassword">Password :</label>
+        <label for="customerPassword ">Email :</label>
         <br>
         <input type="text" id="customerPassword" name="customerPassword" >
         <button name="save-password">Save</button>  
-        
-    </form>   
+        </form>  
     </div>
-
-
-
-
 </section>
-
 
 
 
