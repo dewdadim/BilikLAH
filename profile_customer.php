@@ -13,7 +13,7 @@ $updatePhone = "UPDATE Customer SET  customerPhone = '$customerPhone' WHERE cust
 $updatePassword = "UPDATE Customer SET  customerPassword = '$customerPassword'WHERE customerId = $customerId";
 $updateEmail = "UPDATE Customer SET customerEmail = '$customerEmail' WHERE customerId = $customerId";
  
- if (isset($_POST['customerName'])){
+ if (isset($_POST['save-name'])){
     if (mysqli_query($connect,$updateName)) {
         echo " <script>alert('Update SuccessfuL!');
                 window.location='profile_customer.php'</script> ";
