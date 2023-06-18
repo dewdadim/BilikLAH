@@ -12,13 +12,14 @@ $updateQuery = "UPDATE Customer SET customerName = '$customerName', customerPhon
  
  
 if (mysqli_query($connect,$updateQuery)) {
-    echo "Fields updated successfully.";
+    echo " <script>alert('Update SuccessfuL!');
+               window.location='profile_customer.php'</script> ";
 } else {
     echo "Error updating fields: " . mysqli_error($link);
 }
 
 
-$customerName="SELECT customerName FROM Customer WHERE Phone = '123456789'";
+$customer = "SELECT * FROM Customer WHERE customerEmail = $customerEmail";
 
 ?>
 
@@ -61,7 +62,7 @@ $customerName="SELECT customerName FROM Customer WHERE Phone = '123456789'";
     <form action="profile_customer.php" method="post">
     <label for="customerName">Name :</label>
     <br>
-    <input type="text" id="customerName" name="customerName" value="<?php echo $customerName; ?>" disabled>
+    <input type="text" id="customerName" name="customerName" value="<?php echo $customer['customerName']; ?>" disabled>
     <input type="button" value="Edit" onclick="enableEdit('customerName')">
     <input type="button" value="Save" onclick="saveChanges('customerName')">  
     </form>   
@@ -71,7 +72,7 @@ $customerName="SELECT customerName FROM Customer WHERE Phone = '123456789'";
     <form action="profile_customer.php" method="post">
     <label for="customerPhone">Phone :</label>
     <br>
-    <input type="text" id="customerPhone" name="customerPhone" value="<?php echo $customerPhone; ?>" disabled>
+    <input type="text" id="customerPhone" name="customerPhone" value="<?php echo $customer['customerPhone']; ?>" disabled>
     <input type="button" value="Edit" onclick="enableEdit('customerPhone')">
     <input type="button" value="Save" onclick="saveChanges('customerPhone')">
     </form>  
@@ -81,7 +82,7 @@ $customerName="SELECT customerName FROM Customer WHERE Phone = '123456789'";
     <form action="profile_customer.php" method="post">
     <label for="customerEmail">Email :</label>
     <br>
-    <input type="text" id="customerEmail" name="customerEmail" value="<?php echo $profileEmail; ?>" disabled>
+    <input type="text" id="customerEmail" name="customerEmail" value="<?php echo $customer['customerEmail']; ?>" disabled>
     <input type="button" value="Edit" onclick="enableEdit('customerEmail')">
     <input type="button" value="Save" onclick="saveChanges('customerEmail')">
     </form>  
