@@ -27,8 +27,13 @@
                     <li><a href="booking.html">My Booking</a></li>
                     <li>
                         <?php
-                            $name = $_SESSION['name'];
-                            echo "<a href='/booking.html'>Hello, $name</a>";
+
+                            $sql = "SELECT substring_index(customerName,' ',1) AS firstName FROM Customer";
+                            $data = mysqli_query($connect, $sql);
+
+                            $customer = mysqli_fetch_array($data);
+                            echo "<a href='/booking.html'>Hello, $customer[firstName]</a>";
+                            
                         ?>
                     </li>
                     <li><a href="logout.php">Logout</a></li>
