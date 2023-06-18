@@ -1,0 +1,66 @@
+@import url(style.css);
+
+.profile{
+
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 90px;
+}
+
+
+.kedudukanAtas{
+    margin-top:100px;
+    margin-left:5% ;
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+.kedudukan{ 
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 75%;
+}
+ 
+ 
+    .kedudukan form{
+        width: 300px;
+        margin-left: 20px;
+        font-family: 'Rubik', sans-serif; 
+        margin-right: auto;
+        margin-left: auto; 
+        margin-top: 3.2rem; 
+    }
+    .kedudukan form label{
+        display: flex;
+        margin-top: 5px;
+        font-size: 20px;
+        padding-left: 5px;
+        padding-bottom: 2px;
+    }
+    .kedudukan form input{
+        width: 100%;
+        padding: 7px;
+        border: none;
+        border: 1px solid var(--primary);
+        background-color: #f5f5f5;
+        border-radius: 10px;
+        outline: none;
+        margin-bottom: 1rem;
+         
+    }
+    
+    .kedudukan form button{
+        width: 20%;
+        padding: 7px;
+        border: none;
+        border: 1px solid var(--primary);
+        background-color: #f5f5f5;
+        border-radius: 10px;
+        outline: none;
+        margin-bottom: 1rem;
+        background-color: var(--primary);
+        color: #f5f5f5; 
+    }
+    
