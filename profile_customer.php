@@ -72,10 +72,16 @@ $customer = mysqli_fetch_array($data);
             </div>
             <div>
                 <ul class="nav-links">
-                    <li><a href="/index.html">Rooms</a></li>
-                    <li><a href="/booking.html">My Booking</a></li>
-                    <li><a href="/profile.html">Profile</a></li>
-                </ul> 
+                    <li><a href="rooms.php">Rooms</a></li>
+                    <li><a href="booking.php">My Booking</a></li>
+                    <li>
+                        <?php
+                            $name = $_SESSION['name'];
+                            echo "<a href='profile_customer.php'>Hello, $name</a>";
+                        ?>
+                    </li>
+                    <li><a href="php/logout.php">Logout</a></li>
+                </ul>
             </div>
         </nav>
     </header>

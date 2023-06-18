@@ -66,13 +66,19 @@ $customer = mysqli_fetch_array($data);
     <header>
         <nav class="nav-bar">
             <div class="logo">
-                <a href="/index.html"><h1>BilikLAH</h1></a>
+                <a href="biliklah/rooms.html"><h1>BilikLAH</h1></a>
             </div>
             <div>
                 <ul class="nav-links">
-                    <li><a href="/index.html">Rooms</a></li>
-                    <li><a href="/booking.html">My Booking</a></li>
-                    <li><a href="/profile.html">Profile</a></li>
+                    <li><a href="rooms_owner.php">My Rooms</a></li>
+                    <li><a href="addRoom.php">Add Room</a></li>
+                    <li>
+                        <?php
+                            $name = $_SESSION['name'];
+                            echo "<a href='profile_owner.php'>Hello, $name</a>";
+                        ?>
+                    </li>
+                    <li><a href="php/logout.php">Logout</a></li>
                 </ul> 
             </div>
         </nav>

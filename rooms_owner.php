@@ -28,7 +28,7 @@
                     <li>
                         <?php
                             $name = $_SESSION['name'];
-                            echo "<a href='profile_customer.php'>Hello, $name</a>";
+                            echo "<a href='profile_owner.php'>Hello, $name</a>";
                         ?>
                     </li>
                     <li><a href="php/logout.php">Logout</a></li>
