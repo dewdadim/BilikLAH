@@ -18,13 +18,19 @@
     <header>
         <nav class="nav-bar">
             <div class="logo">
-                <a href="/index.html"><h1>BilikLAH</h1></a>
+                <a href="biliklah/rooms.html"><h1>BilikLAH</h1></a>
             </div>
             <div>
                 <ul class="nav-links">
                     <li><a href="rooms.php">Rooms</a></li>
-                    <li><a href="booking.php">My Bookings</a></li>
-                    <li><a href="profile_customer.php">Profile</a></li>
+                    <li><a href="booking.php">My Booking</a></li>
+                    <li>
+                        <?php
+                            $name = $_SESSION['name'];
+                            echo "<a href='profile_customer.php'>Hello, $name</a>";
+                        ?>
+                    </li>
+                    <li><a href="php/logout.php">Logout</a></li>
                 </ul> 
             </div>
         </nav>
