@@ -27,7 +27,7 @@
                     <li>
                         <?php
 
-                            $sql = "SELECT substring_index(customerName,' ',1) AS firstName FROM Customer";
+                            $sql = "SELECT substring_index(customerName,' ',1) AS firstName FROM Customer WHERE customerEmail = $_SESSION['name']";
                             $data = mysqli_query($connect, $sql);
 
                             $customer = mysqli_fetch_array($data);

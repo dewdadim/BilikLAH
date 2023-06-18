@@ -74,16 +74,27 @@ $customer = mysqli_fetch_array($data);
     <title>Customer Profile</title>
 </head>
 <body>
-    <header>
+<header>
         <nav class="nav-bar">
             <div class="logo">
-                <a href="/index.html"><h1>Customer</h1></a>
+                <a href="biliklah/rooms.html"><h1>BilikLAH</h1></a>
             </div>
             <div>
                 <ul class="nav-links">
-                    <li><a href="/index.html">Rooms</a></li>
-                    <li><a href="/booking.html">My Booking</a></li>
-                    <li><a href="/profile.html">Profile</a></li>
+                    <li><a href="rooms.php">Rooms</a></li>
+                    <li><a href="booking.html">My Booking</a></li>
+                    <li>
+                        <?php
+
+                            $sql = "SELECT substring_index(customerName,' ',1) AS firstName FROM Customer WHERE customerEmail = $customerEmail";
+                            $data = mysqli_query($connect, $sql);
+
+                            $customer = mysqli_fetch_array($data);
+                            echo "<a href='profile_customer.php'>Hello, $customer[firstName]</a>";
+                            
+                        ?>
+                    </li>
+                    <li><a href="logout.php">Logout</a></li>
                 </ul> 
             </div>
         </nav>
@@ -99,7 +110,13 @@ $customer = mysqli_fetch_array($data);
     <br>
 
     <?php
+<<<<<<< Updated upstream
     echo '<input type="text" id="customerName" name="customerName" value=" $customer[customerName]" disabled>';
+=======
+    echo '<input type="text" id="customerName" name="customerName" value="' . $customer[customerName] . '" disabled>';
+    echo '<input type="button" value="Edit" onclick="enableEdit("customerName")>';
+    echo '<input type="button" value="Save" onclick="saveChanges("customerName")>'; 
+>>>>>>> Stashed changes
     ?>
 
     <button onclick='saveChanges("customerName")'>Save</button>
@@ -114,7 +131,13 @@ $customer = mysqli_fetch_array($data);
     <br>
 
     <?php
+<<<<<<< Updated upstream
     echo '<input type="text" id="customerPhone" name="customerPhone" value=" $customer[customerPhone]" disabled>';
+=======
+    echo '<input type="text" id="customerEmail" name="customerEmail" value="' .  $customer[customerEmail] . '" disabled>';
+    echo '<input type="button" value="Edit" onclick="enableEdit("customerPhone")>';
+    echo '<input type="button" value="Save" onclick="saveChanges("customerPhone")>';
+>>>>>>> Stashed changes
     ?>
 
     <button onclick='saveChanges("customerPhone")'>Save</button>
@@ -125,11 +148,17 @@ $customer = mysqli_fetch_array($data);
 
 <div class="kedudukan">
     <form action="profile_customer.php" method="post">
-    <label for="customerEmail">Email :</label>
+    <label for="customerPhone">Email :</label>
     <br>
 
     <?php
+<<<<<<< Updated upstream
     echo '<input type="text" id="customerEmail" name="customerEmail" value=" $customer[customerEmail]" disabled>';
+=======
+    echo '<input type="text" id="customerPhone" name="customerPhone" value="' .  $customer[customerPhone] . '" disabled>';
+    echo '<input type="button" value="Edit" onclick="enableEdit("customerPhone")">';
+    echo '<input type="button" value="Save" onclick="saveChanges("customerPhone")">';
+>>>>>>> Stashed changes
     ?>
     <button onclick='saveChanges("customerEmail")'>Save</button>
     <button onclick='enableEdit("customerEmail")'>Edit</button>
