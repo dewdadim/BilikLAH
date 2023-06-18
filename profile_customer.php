@@ -111,7 +111,7 @@ $customer = mysqli_fetch_array($data);
     <label for="customerPhone">Phone :</label>
     <br>
     <?php
-    echo '<input type="text" id="customerEmail" name="customerEmail" value=" $customer[customerEmail]" disabled>';
+    echo '<input type="text" id="customerPhone" name="customerPhone" value=" $customer[customerPhone]" disabled>';
     echo '<input type="button" value="Edit" onclick="enableEdit("customerPhone")>';
     echo '<input type="button" value="Save" onclick="saveChanges("customerPhone")>';
     ?>
