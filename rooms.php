@@ -65,20 +65,20 @@
                 <form action="booking.php" method="POST">
 
                     <div class="form-group">
-                        <label for="beginDate">Begin Date:</label><br>
+                        <label for="beginDate">Check In:</label><br>
                         <input type="date" id="beginDate" name="beginDate" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="endDate">End Date:</label><br>
+                        <label for="endDate">Check Out:</label><br>
                         <input type="date" id="endDate" name="endDate" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="rooms">Rooms:</label><br>
-                        <select id="dropDown" name="rooms">
+                        <label for="roomID">Rooms:</label><br>
+                        <select id="dropDown" name="roomID">
                         <?php
-                            $sql = "SELECT roomName, roomID FROM Room";
+                            $sql = "SELECT * FROM Room";
                             $data = mysqli_query($connect,$sql);
 
                             while ($room = mysqli_fetch_array($data)){
@@ -90,7 +90,7 @@
                     
 
 
-                    <button type="submit" onclick="showSuccessMessage()">Submit</button>
+                    <button type="submit">Submit</button>
                 </form>
             </div>
         </div>  

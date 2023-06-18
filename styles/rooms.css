@@ -51,4 +51,5 @@
     height: 300px;
     object-fit: cover;
     margin-bottom: 20px;
+    border-radius: 25px;
 }

@@ -3,8 +3,8 @@
     session_start();
 
     if(isset($_POST['beginDate'])){
-        $checkin = $_POST["beginDate"];
-        $checkout = $_POST["endDate"]; 
+        $checkin = date('m-d-Y', strtotime($_POST["beginDate"]));
+        $checkout = date('m-d-Y', strtotime($_POST["endDate"]));
         $customerEmail = $_SESSION["email"];
         $room = $_POST["roomID"];
 

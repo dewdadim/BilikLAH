@@ -21,7 +21,7 @@
   mysqli_select_db($link,"biliklah_db") or die(mysqli_connect_error());
 
 
-
+  
   //mysql query
   $mysql_query1 = "CREATE TABLE Customer (customerName VARCHAR (50), customerEmail VARCHAR(40), 
   customerPhone VARCHAR(20), customerPassword VARCHAR(15), PRIMARY KEY(customerEmail))";
@@ -34,7 +34,7 @@
   FOREIGN KEY(ownerEmail) REFERENCES RoomOwner(ownerEmail))";
 
   $mysql_query4 = "CREATE TABLE Booking (bookingID INT AUTO_INCREMENT, dateBegin DATE,
-  dateEnd DATE, customerEmail VARCHAR(40), ownerEmail VARCHAR(40), roomID INT,
+  dateEnd DATE, customerEmail VARCHAR(40), roomID INT,
   PRIMARY KEY(bookingID),
   FOREIGN KEY(customerEmail) references Customer(customerEmail),
   FOREIGN KEY(roomID) references Room(roomID))";

@@ -1,6 +1,8 @@
 <?php
+    
+    include ('php/create_db.php');
     include('php/connect.php');
-
+    
     if(isset($_POST['email'])){
         $name = $_POST["name"]; 
         $email = $_POST["email"];
