@@ -31,7 +31,7 @@
                             $data = mysqli_query($connect, $sql);
 
                             $customer = mysqli_fetch_array($data);
-                            echo "<a href='/booking.html'>Hello, $customer[firstName]</a>";
+                            echo "<a href='profile_customer.php'>Hello, $customer[firstName]</a>";
                             
                         ?>
                     </li>
