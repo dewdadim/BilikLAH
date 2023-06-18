@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/assets/house.png">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/register-login.css">
+    <title>bilikLAH</title>
+</head>
+<body>
+    <header>
+        <nav class="nav-bar">
+            <div class="logo">
+                <h1>BilikLAH</h1>
+            </div>
+            
+            <div>
+                <ul class="nav-links">
+                    <li><a href="registerOwner.html">Want to be Owner?</a></li>
+                </ul> 
+            </div>
+
+        </nav>
+    </header>
+    <div class="wrapper">
+        <h1 id="welcome">Sign Up!</h1>
+        <form class="register" action="register-customer.php" method="post">
+            <label for="name"><h3>Name</h3></label>
+            <input type="text" name="name" required><br>
+
+            <label for="email"><h3>Email </h3></label>
+            <input type="email" name="email" required><br>
+
+            <label for="phone"><h3>Phone Number </h3></label>
+            <input type="text" name="phone" required><br>
+
+            <label for="password"><h3>Password </h3></label>
+            <input type="password" name="password" required><br>
+
+            <label for="confirmpass"><h3>Confirm Password </h3></label>
+            <input type="password" name="confirmpass" required><br>
+
+            <input type="submit" value="Create Account">
+            
+            <a href="login.html">Already has an account?</a>
+            <!--
+            <div class="Column"> 
+                <div class="container">
+                    <img class="house3d" src="img/assets/3d-house.png" alt="3d-house" height="450px">
+               </div>
+           </div>
+           -->
+        </form>
+        
+</div>
+</body>
+</html>

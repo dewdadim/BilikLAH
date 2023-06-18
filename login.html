@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/assets/house.png">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/register-login.css">
+    <title>bilikLAH</title>
+</head>
+<body>
+    <header>
+        <nav class="nav-bar">
+            <div class="logo">
+                <a href="login.html"><h1>BilikLAH</h1></a>
+            </div>
+            <div>
+                <ul class="nav-links">
+                    <li><a href="registerCustomer.html">Register</a></li>
+                </ul> 
+            </div>
+        </nav>
+    </header>
+    <div class="wrapper2">
+        <h1 id="welcome2">Welcome Back!</h1>
+
+        <form class="register" action="login.php" method="post">
+
+            <label for="name" ><h3>Email</h3></label>
+            <input type="text" name="email" required><br>
+
+            <label for="password"><h3>Password</h3></label>
+            <input type="password" name="password" required><br>
+
+            <input type="submit" value="Log in">
+
+            <a href="registerCustomer.html">No account?</a>
+        </form>
+</div>
+</body>
+</html>

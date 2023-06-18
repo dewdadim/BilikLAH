@@ -1,0 +1,54 @@
+.room-list__section {
+    margin-top: 12rem;
+    padding-inline: 10rem;
+    height: 50em;
+}
+
+.header-text {
+    font-size: 5rem;
+}
+
+.room-list__rooms {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 5rem;
+    padding-inline: 5rem;
+}
+
+.room-list__room-card {
+    box-shadow: 0px 0px 18px #888888;
+    border-radius: 25px;
+    padding: 10px;
+    padding-bottom: 30px;
+    width: 340px;
+}
+
+.room-card__text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+}
+
+.room-name {
+    font-size: 3rem;
+    font-weight: 400;
+}
+
+.room-price {
+    font-size: 3rem;
+    font-weight: 100;
+}
+
+.room-capacity {
+    font-size: 2rem;
+    font-weight: 100;
+}
+
+.room-list__room-card img {
+    width: 320px;
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
