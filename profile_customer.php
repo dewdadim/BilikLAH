@@ -8,6 +8,7 @@ $customerPassword = $_POST['customerPassword'];
 $customerEmail = $_POST['customerEmail'];
 $id = $_SESSION['email'];
 
+<<<<<<< HEAD
 $updateName = "UPDATE Customer SET customerName = '$customerName' WHERE customerEmail = $id";
 $updatePhone = "UPDATE Customer SET  customerPhone = '$customerPhone' WHERE customerEmail = $id";
 $updatePassword = "UPDATE Customer SET  customerPassword = '$customerPassword'WHERE customerEmail = $id";
@@ -180,3 +181,28 @@ $customer = mysqli_fetch_array($data);
 </script>
 </body>
 </html>
+=======
+
+$updateQuery = "UPDATE Customer SET customerName = '$customerName' WHERE customerId = 999";
+ 
+ 
+if (mysqli_query($link,$updateQuery)) {
+    echo "Name updated successfully.";
+} else {
+    echo "Error updating name: " . mysqli_error($link);
+}
+
+// Close the database connection
+mysqli_close($link);
+?>
+
+
+
+
+
+
+
+
+
+ 
+>>>>>>> main

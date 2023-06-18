@@ -1,5 +1,6 @@
 <?php
     include('php/connect.php');
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -27,11 +28,11 @@
                     <li>
                         <?php
 
-                            $sql = "SELECT substring_index(customerName,' ',1) AS firstName FROM Customer WHERE customerEmail = $_SESSION['name']";
+                            $sql = "SELECT substring_index(customerName,' ',1) AS firstName FROM Customer";
                             $data = mysqli_query($connect, $sql);
 
                             $customer = mysqli_fetch_array($data);
-                            echo "<a href='profile_customer.php'>Hello, $customer[firstName]</a>";
+                            echo "<a href='/booking.html'>Hello, $customer[firstName]</a>";
                             
                         ?>
                     </li>
