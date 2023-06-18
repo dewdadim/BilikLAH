@@ -1,15 +1,17 @@
 <?php
 include('php/connect.php');
+session_start();
 
 $customerName = $_POST['customerName'];
 $customerPhone = $_POST['customerPhone'];
 $customerPassword = $_POST['customerPassword'];
 $customerEmail = $_POST['customerEmail'];
+$id = $_SESSION['email'];
 
-$updateName = "UPDATE Customer SET customerName = '$customerName' WHERE customerEmail = $customerEmail";
-$updatePhone = "UPDATE Customer SET  customerPhone = '$customerPhone' WHERE customerEmail = $customerEmail";
-$updatePassword = "UPDATE Customer SET  customerPassword = '$customerPassword'WHERE customerEmail = $customerEmail";
-$updateEmail = "UPDATE Customer SET customerEmail = '$customerEmail' WHERE customerEmail = $customerEmail";
+$updateName = "UPDATE Customer SET customerName = '$customerName' WHERE customerEmail = $id";
+$updatePhone = "UPDATE Customer SET  customerPhone = '$customerPhone' WHERE customerEmail = $id";
+$updatePassword = "UPDATE Customer SET  customerPassword = '$customerPassword'WHERE customerEmail = $id";
+$updateEmail = "UPDATE Customer SET customerEmail = '$customerEmail' WHERE customerEmail = $id";
  
  if (isset($_POST['save-name'])){
     if (mysqli_query($connect,$updateName)) {
