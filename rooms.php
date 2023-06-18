@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/rooms.css">
+    <link rel="stylesheet" href="styles/booking.css">
 
     <link rel="icon" href="img/assets/house.png">
     <title>bilikLAH</title>
@@ -56,6 +57,43 @@
                 }
             ?>
         </div>
+    </section>
+    <section class="container">
+        <div class="booking__section">
+            <div class="form">
+                <h1 id="h1">BOOK ROOM</h1>
+                <form action="booking.php" method="POST">
+
+                    <div class="form-group">
+                        <label for="beginDate">Begin Date:</label><br>
+                        <input type="date" id="beginDate" name="beginDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="endDate">End Date:</label><br>
+                        <input type="date" id="endDate" name="endDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rooms">Rooms:</label><br>
+                        <select id="dropDown" name="rooms">
+                        <?php
+                            $sql = "SELECT roomName, roomID FROM Room";
+                            $data = mysqli_query($connect,$sql);
+
+                            while ($room = mysqli_fetch_array($data)){
+                                echo "<option value='$room[roomID]'>$room[roomName]</option>";
+                            }
+                        ?>
+                        </select>
+                    </div>
+                    
+
+
+                    <button type="submit" onclick="showSuccessMessage()">Submit</button>
+                </form>
+            </div>
+        </div>  
     </section>
 </body>
 </html>

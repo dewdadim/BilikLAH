@@ -37,7 +37,6 @@
   dateEnd DATE, customerEmail VARCHAR(40), ownerEmail VARCHAR(40), roomID INT,
   PRIMARY KEY(bookingID),
   FOREIGN KEY(customerEmail) references Customer(customerEmail),
-  FOREIGN KEY(ownerEmail) references RoomOwner(ownerEmail),
   FOREIGN KEY(roomID) references Room(roomID))";
 
 
