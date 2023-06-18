@@ -6,17 +6,17 @@ $customerPhone = $_POST['customerPhone'];
 $customerPassword = $_POST['customerPassword'];
 $customerEmail = $_POST['customerEmail'];
 
-$updateName = "UPDATE Customer SET customerName = '$customerName' WHERE customerId = $customerId";
-$updatePhone = "UPDATE Customer SET  customerPhone = '$customerPhone' WHERE customerId = $customerId";
-$updatePassword = "UPDATE Customer SET  customerPassword = '$customerPassword'WHERE customerId = $customerId";
-$updateEmail = "UPDATE Customer SET customerEmail = '$customerEmail' WHERE customerId = $customerId";
+$updateName = "UPDATE Customer SET customerName = '$customerName' WHERE customerEmail = $customerEmail";
+$updatePhone = "UPDATE Customer SET  customerPhone = '$customerPhone' WHERE customerEmail = $customerEmail";
+$updatePassword = "UPDATE Customer SET  customerPassword = '$customerPassword'WHERE customerEmail = $customerEmail";
+$updateEmail = "UPDATE Customer SET customerEmail = '$customerEmail' WHERE customerEmail = $customerEmail";
  
  if (isset($_POST['save-name'])){
     if (mysqli_query($connect,$updateName)) {
         echo " <script>alert('Update SuccessfuL!');
                 window.location='profile_customer.php'</script> ";
     } else {
-        echo "Error updating fields: " . mysqli_error($link);
+        echo "Error updating fields: " . mysqli_error($connect);
     }
  }
 
@@ -25,17 +25,17 @@ $updateEmail = "UPDATE Customer SET customerEmail = '$customerEmail' WHERE custo
         echo " <script>alert('Update SuccessfuL!');
                 window.location='profile_customer.php'</script> ";
     } else {
-        echo "Error updating fields: " . mysqli_error($link);
+        echo "Error updating fields: " . mysqli_error($connect);
     }
  }
 
 
  if (isset($_POST['save-phone'])){
-    if (mysqli_query($connect,$$updatePhone)) {
+    if (mysqli_query($connect,$updatePhone)) {
         echo " <script>alert('Update SuccessfuL!');
                 window.location='profile_customer.php'</script> ";
     } else {
-        echo "Error updating fields: " . mysqli_error($link);
+        echo "Error updating fields: " . mysqli_error($connect);
     }
  }
 
@@ -45,7 +45,7 @@ $updateEmail = "UPDATE Customer SET customerEmail = '$customerEmail' WHERE custo
         echo " <script>alert('Update SuccessfuL!');
                 window.location='profile_customer.php'</script> ";
     } else {
-        echo "Error updating fields: " . mysqli_error($link);
+        echo "Error updating fields: " . mysqli_error($connect);
     }
 }
 
