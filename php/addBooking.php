@@ -4,15 +4,16 @@
 //     die('Could not connect: ' . mysqli_connect_error());
 // }
 
+include('create_db.php');
 include('php/connect.php');
 
 $roomName = $_POST['roomName'];
-$roomDesc = $_POST['roomDesc'];
 $roomPrice = $_POST['roomPrice'];
 $roomCapacity = $_POST['roomCapacity'];
+$roomImg = $_POST['roomImage'];
 
-$insertQuery = "INSERT INTO Room (roomName, roomDesc, roomPrice, roomCapacity) 
-               VALUES ('$roomName', '$roomDesc', '$roomPrice', '$roomCapacity')";
+$insertQuery = "INSERT INTO Room (roomName, roomPrice, roomCapacity, roomImage) 
+               VALUES ('$roomName', '$roomPrice', '$roomCapacity', '$roomImg')";
 
 if (mysqli_query($link, $insertQuery)) {
     echo "Data inserted successfully";

@@ -30,17 +30,30 @@
         }
     </script>
 
+<script>
+    function handleImageUpload(event) {
+        const fileInput = event.target;
+        const file = fileInput.files[0];
+        const imageURLInput = document.getElementById('imageURL');
+
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                imageURLInput.value = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        } else {
+            imageURLInput.value = '';
+        }
+    }
+</script>
+
     <main class="container">
         <div class="form">
             <form action="addBooking.php" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="roomName">Room Name:</label>
                     <input type="text" id="roomName" name="roomName" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="roomDesc">Room Description:</label>
-                    <textarea id="roomDesc" name="roomDesc" required></textarea>
                 </div>
 
                 <div class="form-group">
@@ -54,8 +67,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="roomImage">Room Image:</label>
-                    <input type="file" id="roomImage" name="roomImage" accept="image/*" required>
+                    <label for="RoomImage">Room Image:</label>
+                    <input type="file" id="RoomImage" name="RoomImage" accept="image/*" required onchange="handleImageUpload(event)">
                 </div>
 
                 <button type="submit" onclick="showSuccessMessage()">Submit</button>

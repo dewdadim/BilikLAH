@@ -35,7 +35,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 5vh;
+    min-height: 4vh;
 }
 
 header {
@@ -90,8 +90,13 @@ header {
 }
 
 form {
-    width: 60%;
-    max-width: 50rem;
+    width: 200%;
+    max-width: 50rem; 
+    background-color: var(--white);
+    border-radius: 0.8rem;
+    padding: 2rem;
+    align-items: center;
+    box-shadow: 0 0.2rem 0.6rem #e75a7c
 }
 
 .form-group {
@@ -101,6 +106,7 @@ form {
 label {
     font-weight: bold;
     font-size: 1.8rem;
+    margin-bottom: 0.6rem;
 }
 
 input[type="text"],
@@ -111,6 +117,14 @@ textarea {
     border-radius: 0.4rem;
     border: 1px solid var(--black);
     font-size: 1.6rem;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary);
 }
 
 textarea {
@@ -126,6 +140,7 @@ button[type="submit"] {
     border-radius: 0.4rem;
     font-size: 1.8rem;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 button[type="submit"]:hover {
