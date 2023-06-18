@@ -37,11 +37,11 @@
         </nav>
     </header>
     <section class="room-list__section">
-        <h1 class="header-text">Room List</h1>
+        <h1 class="header-text">My Room List</h1>
         <div class="room-list__rooms">
             <?php
-
-                $sql = "SELECT * FROM Room";
+                $id = $_SESSION['email'];
+                $sql = "SELECT * FROM Room WHERE ownerEmail = '$id'";
                 $data = mysqli_query($connect, $sql);
 
                 while ($room = mysqli_fetch_array($data)){

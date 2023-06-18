@@ -36,26 +36,5 @@
             </div>
         </nav>
     </header>
-    <section class="room-list__section">
-        <h1 class="header-text">Room List</h1>
-        <div class="room-list__rooms">
-            <?php
-
-                $sql = "SELECT * FROM Room";
-                $data = mysqli_query($connect, $sql);
-
-                while ($room = mysqli_fetch_array($data)){
-                    echo "<div class='room-list__room-card'>";
-                        echo "<img src='$room[roomImg]'/>";
-                        echo "<div class='room-card__text'>";
-                            echo "<h1 class='room-name'>$room[roomName]</h1>";
-                            echo "<h1 class='room-price'>RM$room[roomPrice] /night</h1>";
-                            echo "<h1 class='room-capacity'>$room[roomCapacity] persons</h1>";
-                        echo "</div>";
-                    echo "</div>";
-                }
-            ?>
-        </div>
-    </section>
 </body>
 </html>

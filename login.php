@@ -35,7 +35,7 @@ if (isset($_POST['email']))
             {
                 $found = TRUE;
                 $_SESSION['email'] = $customer['customerEmail'];
-                $_SESSION['nama'] = $customer['customerName'];
+                $_SESSION['name'] = $customer['customerName'];
                 $_SESSION['status'] = 'customer';
                 break;
             }
@@ -47,7 +47,7 @@ if (isset($_POST['email']))
         if($_SESSION['status'] == 'customer')
             header("Location: rooms.php");
         else
-            header("Location: index.html");
+            header("Location: rooms_owner.php");
     }
     else
         echo " <script>alert('Incorrect Email or Password');
