@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/booking.css">
+    <link rel="icon" href="img/assets/house.png">
+    <title>bilikLAH</title>
+</head>
+<body>
+    <header>
+        <nav class="nav-bar">
+                <div class="logo">
+                    <a href="/index.html"><h1>BilikLAH</h1></a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="Rooms.html">Rooms</a></li>
+                    <li><a href="makeBooking.html">Make Booking</a></li>
+                    <li><a href="Profile.html">Profile</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <script>
+        function showSuccessMessage() {
+            alert("Data inserted successfully!");
+        }
+    </script>
+
+    <main class="container">
+        <div class="form">
+            <h1 id="h1">BOOK ROOM</h1>
+            <form action="MakeReserve.php" method="POST" enctype="multipart/form-data">
+
+                <div class="form-group">
+                    <label for="beginDate">Begin Date:</label>
+                    <input type="date" id="beginDate" name="beginDate" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="endDate">End Date:</label>
+                    <input type="date" id="endDate" name="endDate" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="">Room Name:</label>
+                    <input type="text" id="roomName" name="roomName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="">Room Price:</label>
+                    <input type="text" id="roomPrice" name="roomPrice" required>
+                </div>
+
+                <button type="submit" onclick="showSuccessMessage()">Submit</button>
+            </form>
+        </div>
+    </main>
+
+
+
+</body>
+</html>
