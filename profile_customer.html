@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
-
     <link rel="icon" href="img/assets/house.png">
     <title>Customer Profile</title>
 </head>
@@ -29,13 +28,48 @@
 
 
 
+<div class="kedudukanAtas">
+    <form action="profile_customer.php" method="post">
+    <label for="customerName">Name :</label>
+    <input type="text" id="customerName" name="customerName" value="<?php echo $customerName; ?>" disabled>
+    <input type="button" value="Edit" onclick="enableEdit('customerName')">
+    <input type="button" value="Save" onclick="saveChanges('customerName')">  
+    </form>   
+</div>
+  
+<div class="kedudukan">
+    <form action="profile_customer.php" method="post">
+    <label for="customerPhone">Phone :</label>
+    <input type="text" id="customerPhone" name="customerPhone" value="<?php echo $customerPhone; ?>" disabled>
+    <input type="button" value="Edit" onclick="enableEdit('customerPhone')">
+    <input type="button" value="Save" onclick="saveChanges('customerPhone')">
+    </form>  
+</div>
+
+<div class="kedudukan">
+    <form action="profile_customer.php" method="post">
+    <label for="customerEmail">Email :</label>
+    <input type="text" id="customerEmail" name="customerEmail" value="<?php echo $profileEmail; ?>" disabled>
+    <input type="button" value="Edit" onclick="enableEdit('customerEmail')">
+    <input type="button" value="Save" onclick="saveChanges('customerEmail')">
+    </form>  
+</div>
 
 
 
 
 
-    
+<script>
+    function enableEdit(elementId) {
+      var inputElement = document.getElementById(elementId);
+      inputElement.disabled = false;
+    }
+  
+    function saveChanges(elementId) {
+      var inputElement = document.getElementById(elementId);
+      inputElement.disabled = true;
+    }
+  </script>
 
-    
 </body>
 </html>
