@@ -97,11 +97,13 @@ $customer = mysqli_fetch_array($data);
     <form action="profile_customer.php" method="post">
     <label for="customerName">Name :</label>
     <br>
+
     <?php
     echo '<input type="text" id="customerName" name="customerName" value=" $customer[customerName]" disabled>';
-    echo '<input type="button" value="Edit" onclick="enableEdit("customerName")>';
-    echo '<input type="button" value="Save" onclick="saveChanges("customerName")>'; 
     ?>
+
+    <button onclick='saveChanges("customerName")'>Save</button>
+    <button onclick='enableEdit("customerName")'>Edit</button>
 
 </form>   
 </div>
@@ -110,11 +112,13 @@ $customer = mysqli_fetch_array($data);
     <form action="profile_customer.php" method="post">
     <label for="customerPhone">Phone :</label>
     <br>
+
     <?php
     echo '<input type="text" id="customerPhone" name="customerPhone" value=" $customer[customerPhone]" disabled>';
-    echo '<input type="button" value="Edit" onclick="enableEdit("customerPhone")>';
-    echo '<input type="button" value="Save" onclick="saveChanges("customerPhone")>';
     ?>
+
+    <button onclick='saveChanges("customerPhone")'>Save</button>
+    <button onclick='enableEdit("customerPhone")'>Edit</button>
 
 </form>  
 </div>
@@ -123,11 +127,14 @@ $customer = mysqli_fetch_array($data);
     <form action="profile_customer.php" method="post">
     <label for="customerEmail">Email :</label>
     <br>
+
     <?php
     echo '<input type="text" id="customerEmail" name="customerEmail" value=" $customer[customerEmail]" disabled>';
-    echo '<input type="button" value="Edit" onclick="enableEdit("customerEmail")">';
-    echo '<input type="button" value="Save" onclick="saveChanges("customerEmail")">';
     ?>
+    <button onclick='saveChanges("customerEmail")'>Save</button>
+    <button onclick='enableEdit("customerEmail")'>Edit</button>
+    
+    
 </form>  
 </div>
 
