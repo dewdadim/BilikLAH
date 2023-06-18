@@ -17,7 +17,7 @@
     <header>
         <nav class="nav-bar">
             <div class="logo">
-                <a href="/index.html"><h1>BilikLAH</h1></a>
+                <a href="/index.html"><h1>Customer</h1></a>
             </div>
             <div>
                 <ul class="nav-links">
@@ -36,6 +36,7 @@
 <div class="kedudukanAtas">
     <form action="profile_customer.php" method="post">
     <label for="customerName">Name :</label>
+    <br>
     <input type="text" id="customerName" name="customerName" value="<?php echo $customerName; ?>" disabled>
     <input type="button" value="Edit" onclick="enableEdit('customerName')">
     <input type="button" value="Save" onclick="saveChanges('customerName')">  
@@ -45,6 +46,7 @@
 <div class="kedudukan">
     <form action="profile_customer.php" method="post">
     <label for="customerPhone">Phone :</label>
+    <br>
     <input type="text" id="customerPhone" name="customerPhone" value="<?php echo $customerPhone; ?>" disabled>
     <input type="button" value="Edit" onclick="enableEdit('customerPhone')">
     <input type="button" value="Save" onclick="saveChanges('customerPhone')">
@@ -54,6 +56,7 @@
 <div class="kedudukan">
     <form action="profile_customer.php" method="post">
     <label for="customerEmail">Email :</label>
+    <br>
     <input type="text" id="customerEmail" name="customerEmail" value="<?php echo $profileEmail; ?>" disabled>
     <input type="button" value="Edit" onclick="enableEdit('customerEmail')">
     <input type="button" value="Save" onclick="saveChanges('customerEmail')">
