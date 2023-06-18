@@ -8,12 +8,11 @@ $customerPassword = $_POST['customerPassword'];
 $customerEmail = $_POST['customerEmail'];
 $id = $_SESSION['email'];
 
-<<<<<<< HEAD
-$updateName = "UPDATE Customer SET customerName = '$customerName' WHERE customerEmail = $id";
-$updatePhone = "UPDATE Customer SET  customerPhone = '$customerPhone' WHERE customerEmail = $id";
-$updatePassword = "UPDATE Customer SET  customerPassword = '$customerPassword'WHERE customerEmail = $id";
-$updateEmail = "UPDATE Customer SET customerEmail = '$customerEmail' WHERE customerEmail = $id";
- 
+$updateName = "UPDATE Customer SET customerName = '$customerName'  WHERE customerEmail = '$id'";
+$updatePhone = "UPDATE Customer SET  customerPhone = '$customerPhone' WHERE customerEmail = '$id'";
+$updatePassword = "UPDATE Customer SET  customerPassword = '$customerPassword' WHERE customerEmail = '$id";
+$updateEmail = "UPDATE Customer SET customerEmail = '$customerEmail' WHERE customerEmail = '$id'";
+
  if (isset($_POST['save-name'])){
     if (mysqli_query($connect,$updateName)) {
         echo " <script>alert('Update SuccessfuL!');
@@ -58,6 +57,7 @@ $data = mysqli_query($connect, $query);
 $customer = mysqli_fetch_array($data);
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,143 +66,80 @@ $customer = mysqli_fetch_array($data);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/profile_customer.css">
-
+    
+    
+    
+    
     <link rel="icon" href="img/assets/house.png">
     <title>Customer Profile</title>
 </head>
 <body>
-<header>
+    <header>
         <nav class="nav-bar">
             <div class="logo">
-                <a href="biliklah/rooms.html"><h1>BilikLAH</h1></a>
+                <a href="/index.html"><h1>BilikLAH</h1></a>
             </div>
             <div>
                 <ul class="nav-links">
-                    <li><a href="rooms.php">Rooms</a></li>
-                    <li><a href="booking.html">My Booking</a></li>
-                    <li>
-                        <?php
-
-                            $sql = "SELECT substring_index(customerName,' ',1) AS firstName FROM Customer WHERE customerEmail = $customerEmail";
-                            $data = mysqli_query($connect, $sql);
-
-                            $customer = mysqli_fetch_array($data);
-                            echo "<a href='profile_customer.php'>Hello, $customer[firstName]</a>";
-                            
-                        ?>
-                    </li>
-                    <li><a href="logout.php">Logout</a></li>
+                    <li><a href="/index.html">Rooms</a></li>
+                    <li><a href="/booking.html">My Booking</a></li>
+                    <li><a href="/profile.html">Profile</a></li>
                 </ul> 
             </div>
         </nav>
     </header>
 
-<div class="kedudukanAtas">
-    <form action="profile_customer.php" method="post">
-    <label for="customerName">Name :</label>
-    <br>
 
-    <?php
 
-        echo '<input type="text" id="customerName" name="customerName" value="' . $customer[customerName] . '" disabled>';
-        // echo '<input type="button" value="Edit" onclick="enableEdit("customerName")>';
-        // echo '<input type="button" value="Save" onclick="saveChanges("customerName")>'; 
 
-    ?>
+<section class="container">
+    <h1 class="profile" >Profile</h1>
 
-    <button name="save-name" onclick='saveChanges("customerName")'>Save</button>
-    <button onclick='enableEdit("customerName")'>Edit</button>
-
-</form>   
-</div>
-  
-<div class="kedudukan">
-    <form action="profile_customer.php" method="post">
-    <label for="customerEmail">Phone :</label>
-    <br>
-
-    <?php
-
-    echo '<input type="text" id="customerEmail" name="customerEmail" value="' .  $customer[customerEmail] . '" disabled>';
-    // echo '<input type="button" value="Edit" onclick="enableEdit("customerEmail")>';
-    // echo '<input type="button" value="Save" onclick="saveChanges("customerEmail")>';
-
-    ?>
-
-    <button name="save-email" onclick='saveChanges("customerEmail")'>Save</button>
-    <button onclick='enableEdit("customerEmail")'>Edit</button>
-
-</form>  
-</div>
-
-<div class="kedudukan">
-    <form action="profile_customer.php" method="post">
-    <label for="customerPhone">Email :</label>
-    <br>
-
-    <?php
-
-    echo '<input type="text" id="customerPhone" name="customerPhone" value="' .  $customer[customerPhone] . '" disabled>';
-    // echo '<input type="button" value="Edit" onclick="enableEdit("customerPhone")">';
-    // echo '<input type="button" value="Save" onclick="saveChanges("customerPhone")">';
-
-    ?>
+    <div class="kedudukan">
+        <form action="profile_customer.php" method="POST">
+        <label for="customerName">Name :</label>
+        <br>
+        <input type="text" id="customerName" name="customerName" >
+        <button name="save-name">Save</button>  
+        
+    </form>   
+    </div>
+      
+    <div class="kedudukan">
+        <form action="profile_customer.php" method="POST">
+        <label for="customerEmail">Email :</label>
+        <br>
+        <input type="text" id="customerEmail" name="customerEmail" >
+        <button name="save-email">Save</button>
+        </form>  
+    </div>
     
-    <button name="save-phone" onclick='saveChanges("customerPhone")'>Save</button>
-    <button onclick='enableEdit("customerPhone")'>Edit</button>
-    
-    
-</form>  
-</div>
+    <div class="kedudukan">
+        <form action="profile_customer.php" method="POST">
+        <label for="customerPhone">Email :</label>
+        <br>
+        <input type="number" id="customerPhone" name="customerPhone" >
+        <button name="save-phone">Save</button>
+        </form>  
+    </div>
+
+    <div class="kedudukan">
+        <form action="profile_customer.php" method="POST">
+        <label for="customerPassword">Password :</label>
+        <br>
+        <input type="text" id="customerPassword" name="customerPassword" >
+        <button name="save-password">Save</button>  
+        
+    </form>   
+    </div>
 
 
 
 
+</section>
 
 
 
 
-
-
-
-
-
-
-<script>
-    function enableEdit(elementId) {
-      var inputElement = document.getElementById(elementId);
-      inputElement.disabled = false;
-    }
-  
-    function saveChanges(elementId) {
-      var inputElement = document.getElementById(elementId);
-      inputElement.disabled = true;
-    }
-</script>
 </body>
 </html>
-=======
-
-$updateQuery = "UPDATE Customer SET customerName = '$customerName' WHERE customerId = 999";
- 
- 
-if (mysqli_query($link,$updateQuery)) {
-    echo "Name updated successfully.";
-} else {
-    echo "Error updating name: " . mysqli_error($link);
-}
-
-// Close the database connection
-mysqli_close($link);
-?>
-
-
-
-
-
-
-
-
-
- 
->>>>>>> main
