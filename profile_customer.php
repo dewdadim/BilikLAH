@@ -8,19 +8,54 @@ $customerPassword = $_POST['customerPassword'];
 $customerEmail = $_POST['customerEmail'];
 
 
-$updateQuery = "UPDATE Customer SET customerName = '$customerName', customerPhone = '$customerPhone', customerPassword = '$customerPassword', customerEmail = '$customerEmail' WHERE customerId = $customerId";
+$updateName = "UPDATE Customer SET customerName = '$customerName' WHERE customerId = $customerId";
+$updatePhone = "UPDATE Customer SET  customerPhone = '$customerPhone' WHERE customerId = $customerId";
+$updatePassword = "UPDATE Customer SET  customerPassword = '$customerPassword'WHERE customerId = $customerId";
+$updateEmail = "UPDATE Customer SET customerEmail = '$customerEmail' WHERE customerId = $customerId";
  
- 
-if (mysqli_query($connect,$updateQuery)) {
-    echo " <script>alert('Update SuccessfuL!');
-               window.location='profile_customer.php'</script> ";
-} else {
-    echo "Error updating fields: " . mysqli_error($link);
+ if (isset($_POST['customerName'])){
+    if (mysqli_query($connect,$updateName)) {
+        echo " <script>alert('Update SuccessfuL!');
+                window.location='profile_customer.php'</script> ";
+    } else {
+        echo "Error updating fields: " . mysqli_error($link);
+    }
+ }
+
+ if (isset($_POST['customerPhone'])){
+    if (mysqli_query($connect,$updatePhone)) {
+        echo " <script>alert('Update SuccessfuL!');
+                window.location='profile_customer.php'</script> ";
+    } else {
+        echo "Error updating fields: " . mysqli_error($link);
+    }
+ }
+
+
+ if (isset($_POST['customerPassword'])){
+    if (mysqli_query($connect,$updatePassword)) {
+        echo " <script>alert('Update SuccessfuL!');
+                window.location='profile_customer.php'</script> ";
+    } else {
+        echo "Error updating fields: " . mysqli_error($link);
+    }
+ }
+
+
+ if (isset($_POST['customerEmail'])){
+    if (mysqli_query($connect,$updateEmail)) {
+        echo " <script>alert('Update SuccessfuL!');
+                window.location='profile_customer.php'</script> ";
+    } else {
+        echo "Error updating fields: " . mysqli_error($link);
+    }
 }
 
 
-$customer = "SELECT * FROM Customer WHERE customerEmail = $customerEmail";
+$query = "SELECT * FROM Customer";
 
+$data = mysqli_query($connect, $query);
+$customer = mysqli_fetch_array($data);
 ?>
 
 <!DOCTYPE html>
@@ -62,10 +97,13 @@ $customer = "SELECT * FROM Customer WHERE customerEmail = $customerEmail";
     <form action="profile_customer.php" method="post">
     <label for="customerName">Name :</label>
     <br>
-    <input type="text" id="customerName" name="customerName" value="<?php echo $customer['customerName']; ?>" disabled>
-    <input type="button" value="Edit" onclick="enableEdit('customerName')">
-    <input type="button" value="Save" onclick="saveChanges('customerName')">  
-    </form>   
+    <?php
+    echo '<input type="text" id="customerName" name="customerName" value=" $customer[customerName]" disabled>';
+    echo '<input type="button" value="Edit" onclick="enableEdit("customerName")>';
+    echo '<input type="button" value="Save" onclick="saveChanges("customerName")>'; 
+    ?>
+
+</form>   
 </div>
   
 <div class="kedudukan">
@@ -73,21 +111,24 @@ $customer = "SELECT * FROM Customer WHERE customerEmail = $customerEmail";
     <label for="customerPhone">Phone :</label>
     <br>
     <?php
-    <input type="text" id="customerPhone" name="customerPhone" value="<?php echo $customer['customerPhone']; ?>" disabled>
-    <input type="button" value="Edit" onclick="enableEdit('customerPhone')">
-    <input type="button" value="Save" onclick="saveChanges('customerPhone')">
+    echo '<input type="text" id="customerEmail" name="customerEmail" value=" $customer[customerEmail]" disabled>';
+    echo '<input type="button" value="Edit" onclick="enableEdit("customerPhone")>';
+    echo '<input type="button" value="Save" onclick="saveChanges("customerPhone")>';
     ?>
-    </form>  
+
+</form>  
 </div>
 
 <div class="kedudukan">
     <form action="profile_customer.php" method="post">
     <label for="customerEmail">Email :</label>
     <br>
-    <input type="text" id="customerEmail" name="customerEmail" value="<?php echo $customer['customerEmail']; ?>" disabled>
-    <input type="button" value="Edit" onclick="enableEdit('customerEmail')">
-    <input type="button" value="Save" onclick="saveChanges('customerEmail')">
-    </form>  
+    <?php
+    echo '<input type="text" id="customerEmail" name="customerEmail" value=" $customer[customerEmail]" disabled>';
+    echo '<input type="button" value="Edit" onclick="enableEdit("customerEmail")">';
+    echo '<input type="button" value="Save" onclick="saveChanges("customerEmail")">';
+    ?>
+</form>  
 </div>
 
 
