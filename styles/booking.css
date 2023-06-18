@@ -1,14 +1,5 @@
 @import url(style.css);
 
-.container {
-    max-width: 133rem !important;
-    margin: 0 auto !important;
-    padding: 0 3.4rem !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
 
 .booking__section {
     margin-top: 12rem;
