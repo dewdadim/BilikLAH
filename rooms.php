@@ -24,7 +24,7 @@
             <div>
                 <ul class="nav-links">
                     <li><a href="rooms.php">Rooms</a></li>
-                    <li><a href="booking.html">My Booking</a></li>
+                    <li><a href="booking.php">My Bookings</a></li>
                     <li>
                         <?php
                             $name = $_SESSION['name'];
