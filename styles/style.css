@@ -20,6 +20,7 @@
 html {
     font-size: 65%;
     scroll-behavior: smooth;
+    color: var(--black);
   }
 
 body {
@@ -54,7 +55,7 @@ header {
     font-size: x-large;
 }
 
-.logo a,h1 {
+.logo a,.logo h1 {
     text-decoration: none;
     color: var(--white);
 }

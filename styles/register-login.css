@@ -1,0 +1,165 @@
+@import url(style.css);
+
+
+ /* Signup position*/
+#welcome{
+    margin-top: 30px;
+    font-size: 45px;
+}
+
+          /* Styling the Form background */
+
+.wrapper{
+float: none;
+text-align: center;
+width: 450px;
+height: 700px;
+margin: auto;
+margin-top: 150px;
+background-color: var(--white);
+box-shadow: 0px 0px 18px #888888;
+border-radius: 25px;
+margin-right: auto;
+margin-left: auto;
+padding-top: 1rem;
+padding-bottom: 1rem;
+}
+h3{
+    color: var(--black);
+    font-weight: 400;
+
+          /* Styling the Form  */
+}
+.wrapper form{
+    width: 300px;
+    margin-left: 20px;
+    font-family: 'Rubik', sans-serif; 
+    margin-right: auto;
+    margin-left: auto;  
+    margin-top: 3.2rem;
+}
+.wrapper form label{
+    display: flex;
+    margin-top: 5px;
+    font-size: 15px;
+    padding-left: 5px;
+    padding-bottom: 2px;
+}
+.wrapper form input{
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border: 1px solid var(--primary);
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    outline: none;
+    margin-bottom: 1rem;
+}
+
+.wrapper a, .wrapper2 a {
+    font-size: small;
+    color: var(--secondary);
+    text-decoration: none;
+}
+
+.wrapper form [type="submit"]{
+    color: var(--white);
+    border: 0px;
+    margin: auto;
+    font-size: 2rem;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-top: 3rem;
+    cursor: pointer;
+    float: right;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: var(--primary);
+    margin-bottom: 2.5rem;
+}
+      /* Position of the 3D House */
+
+.container{
+    position: relative;
+    height: 100px;
+    float: left;
+
+}
+.Column{
+    float: right;
+    width: 1300px;  
+    margin-top: -400px;
+  }
+  /* Welcome icon */
+  .signIcon{
+    margin-top: 3px;
+    width: 50px;
+    height: 50px;
+}
+
+/* Log in Wrapper */
+.wrapper2{
+float: none;
+text-align: center;
+width: 400px;
+height: 430px;
+margin: auto;
+margin-top: 150px;
+background-color: var(--white);
+box-shadow: 0px 0px 18px #888888;
+border-radius: 25px;
+margin-right: auto;
+margin-left: auto;
+padding-top: 1rem;
+}
+.wrapper2 form{
+    width: 300px;
+    margin-left: 20px;
+    font-family: 'Rubik', sans-serif; 
+    margin-right: auto;
+    margin-left: auto; 
+    margin-top: 3.2rem; 
+}
+.wrapper2 form label{
+    display: flex;
+    margin-top: 5px;
+    font-size: 15px;
+    padding-left: 5px;
+    padding-bottom: 2px;
+}
+.wrapper2 form input{
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border: 1px solid var(--primary);
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    outline: none;
+    margin-bottom: 1rem;
+}
+.wrapper2 form [type="submit"]{
+    color: var(--white);
+    border: 0px;
+    margin: auto;
+    font-size: 2rem;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-top: 3rem;
+    cursor: pointer;
+    float: right;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: var(--primary);
+    margin-bottom: 2.5rem;
+}
+select{
+    display: flex;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 15px;
+    border-radius: 5px;
+}
+#welcome2{
+    margin-top:30px ;
+    font-size: 40px;
+}
