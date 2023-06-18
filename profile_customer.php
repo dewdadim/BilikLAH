@@ -1,12 +1,10 @@
 <?php
 include('php/connect.php');
 
-
 $customerName = $_POST['customerName'];
 $customerPhone = $_POST['customerPhone'];
 $customerPassword = $_POST['customerPassword'];
 $customerEmail = $_POST['customerEmail'];
-
 
 $updateName = "UPDATE Customer SET customerName = '$customerName' WHERE customerId = $customerId";
 $updatePhone = "UPDATE Customer SET  customerPhone = '$customerPhone' WHERE customerId = $customerId";
@@ -22,28 +20,28 @@ $updateEmail = "UPDATE Customer SET customerEmail = '$customerEmail' WHERE custo
     }
  }
 
- if (isset($_POST['customerPhone'])){
-    if (mysqli_query($connect,$updatePhone)) {
-        echo " <script>alert('Update SuccessfuL!');
-                window.location='profile_customer.php'</script> ";
-    } else {
-        echo "Error updating fields: " . mysqli_error($link);
-    }
- }
-
-
- if (isset($_POST['customerPassword'])){
-    if (mysqli_query($connect,$updatePassword)) {
-        echo " <script>alert('Update SuccessfuL!');
-                window.location='profile_customer.php'</script> ";
-    } else {
-        echo "Error updating fields: " . mysqli_error($link);
-    }
- }
-
-
- if (isset($_POST['customerEmail'])){
+ if (isset($_POST['save-email'])){
     if (mysqli_query($connect,$updateEmail)) {
+        echo " <script>alert('Update SuccessfuL!');
+                window.location='profile_customer.php'</script> ";
+    } else {
+        echo "Error updating fields: " . mysqli_error($link);
+    }
+ }
+
+
+ if (isset($_POST['save-phone'])){
+    if (mysqli_query($connect,$$updatePhone)) {
+        echo " <script>alert('Update SuccessfuL!');
+                window.location='profile_customer.php'</script> ";
+    } else {
+        echo "Error updating fields: " . mysqli_error($link);
+    }
+ }
+
+
+ if (isset($_POST['save-password'])){
+    if (mysqli_query($connect,$updatePassword)) {
         echo " <script>alert('Update SuccessfuL!');
                 window.location='profile_customer.php'</script> ";
     } else {
@@ -53,7 +51,6 @@ $updateEmail = "UPDATE Customer SET customerEmail = '$customerEmail' WHERE custo
 
 
 $query = "SELECT * FROM Customer";
-
 $data = mysqli_query($connect, $query);
 $customer = mysqli_fetch_array($data);
 ?>
@@ -66,10 +63,7 @@ $customer = mysqli_fetch_array($data);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/profile_customer.css">
-    
-    
-    
-    
+
     <link rel="icon" href="img/assets/house.png">
     <title>Customer Profile</title>
 </head>
@@ -100,26 +94,20 @@ $customer = mysqli_fetch_array($data);
         </nav>
     </header>
 
-
-
-
-
 <div class="kedudukanAtas">
     <form action="profile_customer.php" method="post">
     <label for="customerName">Name :</label>
     <br>
 
     <?php
-<<<<<<< Updated upstream
-    echo '<input type="text" id="customerName" name="customerName" value=" $customer[customerName]" disabled>';
-=======
-    echo '<input type="text" id="customerName" name="customerName" value="' . $customer[customerName] . '" disabled>';
-    echo '<input type="button" value="Edit" onclick="enableEdit("customerName")>';
-    echo '<input type="button" value="Save" onclick="saveChanges("customerName")>'; 
->>>>>>> Stashed changes
+
+        echo '<input type="text" id="customerName" name="customerName" value="' . $customer[customerName] . '" disabled>';
+        // echo '<input type="button" value="Edit" onclick="enableEdit("customerName")>';
+        // echo '<input type="button" value="Save" onclick="saveChanges("customerName")>'; 
+
     ?>
 
-    <button onclick='saveChanges("customerName")'>Save</button>
+    <button name="save-name" onclick='saveChanges("customerName")'>Save</button>
     <button onclick='enableEdit("customerName")'>Edit</button>
 
 </form>   
@@ -127,21 +115,19 @@ $customer = mysqli_fetch_array($data);
   
 <div class="kedudukan">
     <form action="profile_customer.php" method="post">
-    <label for="customerPhone">Phone :</label>
+    <label for="customerEmail">Phone :</label>
     <br>
 
     <?php
-<<<<<<< Updated upstream
-    echo '<input type="text" id="customerPhone" name="customerPhone" value=" $customer[customerPhone]" disabled>';
-=======
+
     echo '<input type="text" id="customerEmail" name="customerEmail" value="' .  $customer[customerEmail] . '" disabled>';
-    echo '<input type="button" value="Edit" onclick="enableEdit("customerPhone")>';
-    echo '<input type="button" value="Save" onclick="saveChanges("customerPhone")>';
->>>>>>> Stashed changes
+    // echo '<input type="button" value="Edit" onclick="enableEdit("customerEmail")>';
+    // echo '<input type="button" value="Save" onclick="saveChanges("customerEmail")>';
+
     ?>
 
-    <button onclick='saveChanges("customerPhone")'>Save</button>
-    <button onclick='enableEdit("customerPhone")'>Edit</button>
+    <button name="save-email" onclick='saveChanges("customerEmail")'>Save</button>
+    <button onclick='enableEdit("customerEmail")'>Edit</button>
 
 </form>  
 </div>
@@ -152,20 +138,28 @@ $customer = mysqli_fetch_array($data);
     <br>
 
     <?php
-<<<<<<< Updated upstream
-    echo '<input type="text" id="customerEmail" name="customerEmail" value=" $customer[customerEmail]" disabled>';
-=======
+
     echo '<input type="text" id="customerPhone" name="customerPhone" value="' .  $customer[customerPhone] . '" disabled>';
-    echo '<input type="button" value="Edit" onclick="enableEdit("customerPhone")">';
-    echo '<input type="button" value="Save" onclick="saveChanges("customerPhone")">';
->>>>>>> Stashed changes
+    // echo '<input type="button" value="Edit" onclick="enableEdit("customerPhone")">';
+    // echo '<input type="button" value="Save" onclick="saveChanges("customerPhone")">';
+
     ?>
-    <button onclick='saveChanges("customerEmail")'>Save</button>
-    <button onclick='enableEdit("customerEmail")'>Edit</button>
+    
+    <button name="save-phone" onclick='saveChanges("customerPhone")'>Save</button>
+    <button onclick='enableEdit("customerPhone")'>Edit</button>
     
     
 </form>  
 </div>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -181,7 +175,6 @@ $customer = mysqli_fetch_array($data);
       var inputElement = document.getElementById(elementId);
       inputElement.disabled = true;
     }
-  </script>
-
+</script>
 </body>
 </html>
