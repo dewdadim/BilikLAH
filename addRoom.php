@@ -23,7 +23,6 @@ if (mysqli_query($connect, $insertQuery)) {
 
 
 if (isset($_POST['submit']) && isset($_FILES['my_image'])) {
-	include "db_conn.php";
 
 	echo "<pre>";
 	print_r($_FILES['my_image']);
@@ -37,7 +36,7 @@ if (isset($_POST['submit']) && isset($_FILES['my_image'])) {
 	if ($error === 0) {
 		if ($img_size > 125000) {
 			$em = "Sorry, your file is too large.";
-		    header("Location: index.php?error=$em");
+		    header("Location: addRoom.html?error=$em");
 		}else {
 			$img_ex = pathinfo($img_name, PATHINFO_EXTENSION);
 			$img_ex_lc = strtolower($img_ex);
@@ -50,21 +49,21 @@ if (isset($_POST['submit']) && isset($_FILES['my_image'])) {
 				move_uploaded_file($tmp_name, $img_upload_path);
 
 				// Insert into Database
-				$sql = "INSERT INTO images(image_url) 
+				$sql = "INSERT INTO room(roomImg) 
 				        VALUES('$new_img_name')";
-				mysqli_query($conn, $sql);
+				mysqli_query($connect, $sql);
 				header("Location: view.php");
 			}else {
 				$em = "You can't upload files of this type";
-		        header("Location: index.php?error=$em");
+		        header("Location: addRoom.html?error=$em");
 			}
 		}
 	}else {
 		$em = "unknown error occurred!";
-		header("Location: index.php?error=$em");
+		header("Location: addRoom.html?error=$em");
 	}
 
 }else {
-	header("Location: index.php");
+	header("Location: addRoom.html");
 }
 ?>
