@@ -22,9 +22,9 @@
             </div>
             <div>
                 <ul class="nav-links">
-                    <li><a href="/index.html">Rooms</a></li>
-                    <li><a href="/booking.php">My Bookings</a></li>
-                    <li><a href="/profile.html">Profile</a></li>
+                    <li><a href="rooms.php">Rooms</a></li>
+                    <li><a href="booking.php">My Bookings</a></li>
+                    <li><a href="profile_customer.php">Profile</a></li>
                 </ul> 
             </div>
         </nav>
