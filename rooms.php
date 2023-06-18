@@ -30,9 +30,9 @@
                             $sql = "SELECT substring_index(customerName,' ',1) AS firstName FROM Customer";
                             $data = mysqli_query($connect, $sql);
 
-                            while ($customer = mysqli_fetch_array($data)){
-                                echo "<a href='/booking.html'>Hello, $customer[firstName]</a>";
-                            }
+                            $customer = mysqli_fetch_array($data);
+                            echo "<a href='/booking.html'>Hello, $customer[firstName]</a>";
+                            
                         ?>
                     </li>
                     <li><a href="logout.php">Logout</a></li>
