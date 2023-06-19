@@ -94,21 +94,27 @@ $customer = mysqli_fetch_array($data);
 
     <div class="kedudukan">
         <form action="profile_customer.php" method="POST">
+            <div class="form-field">
+                <label for="customerName">Name :</label>
+                <input type="text" id="customerName" name="customerName" >
+            </div>
 
-        <label for="customerName">Name :</label>
-        <br>
-        <input   type="text" id="customerName" name="customerName" >
-        <button name="save-name">Update</button>  
-        <br>
-        <label for="customerPhone">Phone :</label>
-        <br>
-        <input type="text" id="customerPhone" name="customerPhone" >
-        <button name="save-phone">Update</button>  
-        <br>
-        <label for="customerPassword ">Password :</label>
-        <br>
-        <input type="text" id="customerPassword" name="customerPassword" >
-        <button name="save-password">Update</button>  
+            <div class="form-field">
+                <button name="save-name">Update</button>
+                <label for="customerPhone">Phone :</label>
+            </div>
+
+            <div class="form-field">
+                <input type="text" id="customerPhone" name="customerPhone" >
+                <button name="save-phone">Update</button>  
+            </div>
+
+            <div class="form-field">
+                <label for="customerPassword ">Password :</label>
+                <input type="text" id="customerPassword" name="customerPassword" >
+            </div>
+            
+            <button name="save-password">Update</button>  
         </form>  
     </div>
 </section>

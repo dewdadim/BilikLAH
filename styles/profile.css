@@ -19,10 +19,12 @@
 
 .kedudukan{ 
     font-size: 20px;
-    font-weight: bold;
     margin-right: 75%;
 }
  
+.form-field {
+    padding-bottom: 2rem;
+}
  
     .kedudukan form{
         width: 300px;
