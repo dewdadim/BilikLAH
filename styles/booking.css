@@ -16,6 +16,11 @@
     position: absolute;
     top: 50%;
     left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
 }
 
 form {

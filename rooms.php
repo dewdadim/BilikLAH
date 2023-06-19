@@ -63,7 +63,6 @@
             <div class="form">
                 <h1 id="h1">BOOK ROOM</h1>
                 <form action="booking.php" method="POST">
-
                     <div class="form-group">
                         <label for="beginDate">Check In:</label><br>
                         <input type="date" id="beginDate" name="beginDate" required>
@@ -87,9 +86,6 @@
                         ?>
                         </select>
                     </div>
-                    
-
-
                     <button type="submit">Submit</button>
                 </form>
             </div>

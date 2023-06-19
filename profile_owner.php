@@ -58,7 +58,7 @@ $customer = mysqli_fetch_array($data);
     
     
     
-    
+    <link rel="icon" href="img/assets/house.png">
     <link rel="icon" href="img/assets/house.png">
     <title>Owner Profile</title>
 </head>
