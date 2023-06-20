@@ -20,7 +20,7 @@
     <header>
         <nav class="nav-bar">
             <div class="logo">
-                <a href="biliklah/rooms_owner.php"><h1>BilikLAH</h1></a>
+                <a href="rooms_owner.php"><h1>BilikLAH</h1></a>
             </div>
             <div>
                 <ul class="nav-links">
