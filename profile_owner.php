@@ -84,30 +84,28 @@ $customer = mysqli_fetch_array($data);
         </nav>
     </header>
 
-
-
-
     <section class="container">
     <h1 class="profile">Owner Profile</h1>
 
     <div class="kedudukan">
         <form action="profile_owner.php" method="POST">
+            <div class="form-field">
+                <label for="ownerName">Name :</label>
+                <input type="text" id="ownerName" name="ownerName" >
+                <button name="save-name">Update</button>
+            </div>
 
-        <label for="ownerName">Name :</label>
-        <br>
-        <input   type="text" id="ownerName" name="ownerName" >
-        <button name="save-name">Update</button>  
-        <br>
-        <label for="ownerPhone">Phone :</label>
-        <br>
-        <input type="text" id="ownerPhone" name="ownerPhone" >
-        <button name="save-phone">Update</button>  
-        <br>
-        <label for="ownerPassword ">Password :</label>
-        <br>
-        <input type="text" id="ownerPassword" name="ownerPassword" >
-        <button name="save-password">Update</button>  
-        </form>  
+            <div class="form-field">
+                <label for="pwnerPhone">Phone :</label>
+                <input type="text" id="customerPhone" name="ownerPhone" >
+                <button name="save-phone">Update</button>  
+            </div>
+            <div class="form-field">
+                <label for="ownerPassword ">Password :</label>
+                <input type="text" id="customerPassword" name="ownerPassword" >
+                <button name="save-password">Update</button> 
+            </div> 
+        </form>   
     </div>
 </section>
 

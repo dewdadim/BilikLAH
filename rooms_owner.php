@@ -45,13 +45,17 @@
                 $data = mysqli_query($connect, $sql);
 
                 while ($room = mysqli_fetch_array($data)){
-                    echo "<div class='room-list__room-card'>";
+                    echo "<form class='room-list__room-card' action='deleteRoom.php' method='POST'>";
                         echo "<img src='$room[roomImg]'/>";
                         echo "<div class='room-card__text'>";
+
+                            echo "<input type='text' value='$room[roomID]' name='roomID' class='ID' hidden/>";
                             echo "<h1 class='room-name'>$room[roomName]</h1>";
                             echo "<h1 class='room-price'>RM$room[roomPrice] /night</h1>";
                             echo "<h1 class='room-capacity'>$room[roomCapacity] persons</h1>";
-                        echo "</div>";
+
+                            echo "<input type='submit' value='Delete' class='delete-button' name='delete'/>"; 
+                        echo "</form>";
                     echo "</div>";
                 }
             ?>

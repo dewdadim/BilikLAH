@@ -20,7 +20,6 @@
     border-radius: 0.8rem;
     padding: 2rem;
     box-shadow: 0 0.2rem 0.6rem #e75a7c;
-    position: fixed;
     top: 50%;
     left: 50%;
     margin-top: -50px;
@@ -51,6 +50,7 @@ label {
 
 input[type="text"],
 input[type="date"],
+option,
 textarea {
     width: 40rem;
     padding: 1.2rem;
