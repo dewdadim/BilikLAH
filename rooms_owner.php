@@ -1,6 +1,29 @@
 <?php
     include('php/connect.php');
+    include('dataSort.php');
     session_start();
+
+    
+    if(isset($_POST['sortPriceLH'])) {
+        $_SESSION['sort'] = "SELECT * FROM Room ORDER BY roomPrice ASC";
+    }
+
+    else if(isset($_POST['sortPriceHL'])) {
+        $_SESSION['sort'] = "SELECT * FROM Room ORDER BY roomPrice DESC";
+    }
+
+    else if(isset($_POST['sortCapacityLH'])) {
+        $_SESSION['sort'] = "SELECT * FROM Room ORDER BY roomCapacity ASC";
+    }
+
+    else if(isset($_POST['sortCapacityHL'])) {
+        $_SESSION['sort'] = "SELECT * FROM Room ORDER BY roomCapacity DESC";
+    }
+
+    else {
+        $_SESSION['sort'] = "SELECT * FROM Room";
+    }
+?>
 ?>
 
 <!DOCTYPE html>
@@ -39,10 +62,16 @@
     </header>
     <section class="room-list__section">
         <h1 class="header-text">My Room List</h1>
+        <form class="sorting-section" action="rooms_owner.php" method="POST">
+            <input type="submit" value="Sort Price: Low -> High" name="sortPriceLH" class="sorting-button"/>
+            <input type="submit" value="Sort Price: High -> Low" name="sortPriceHL" class="sorting-button"/>
+            <input type="submit" value="Sort Capacity: Low -> High" name="sortCapacityLH" class="sorting-button"/>
+            <input type="submit" value="Sort Capacity: High -> Low" name="sortCapacityHL" class="sorting-button"/>
+        </form>
         <div class="room-list__rooms">
             <?php
                 $id = $_SESSION['email'];
-                $sql = "SELECT * FROM Room WHERE ownerEmail = '$id'";
+                $sql = $_SESSION['sort'];
                 $data = mysqli_query($connect, $sql);
 
                 while ($room = mysqli_fetch_array($data)){
