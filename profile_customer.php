@@ -97,24 +97,19 @@ $customer = mysqli_fetch_array($data);
             <div class="form-field">
                 <label for="customerName">Name :</label>
                 <input type="text" id="customerName" name="customerName" >
-            </div>
-
-            <div class="form-field">
                 <button name="save-name">Update</button>
-                <label for="customerPhone">Phone :</label>
             </div>
 
             <div class="form-field">
+                <label for="customerPhone">Phone :</label>
                 <input type="text" id="customerPhone" name="customerPhone" >
                 <button name="save-phone">Update</button>  
             </div>
-
             <div class="form-field">
                 <label for="customerPassword ">Password :</label>
                 <input type="text" id="customerPassword" name="customerPassword" >
-            </div>
-            
-            <button name="save-password">Update</button>  
+                <button name="save-password">Update</button> 
+            </div> 
         </form>  
     </div>
 </section>

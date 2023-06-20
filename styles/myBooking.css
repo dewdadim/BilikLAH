@@ -1,0 +1,66 @@
+@import url(style.css);
+
+.booking-list__section {
+    margin-top: 12rem;
+    padding-inline: 10rem;
+    height: 50em;
+}
+
+.header-text {
+    font-size: 5rem;
+}
+
+.booking-list__booking {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 5rem;
+    padding-inline: 5rem;
+}
+
+.booking-list__booking-card {
+    box-shadow: 0px 0px 18px #888888;
+    border-radius: 25px;
+    padding: 20px;
+    padding-bottom: 30px;
+    width: 340px;
+}
+
+#card-header {
+    padding-bottom: 1em;
+    font-size: x-large;
+}
+
+.booking-card__text {
+    gap: 20px;
+}
+
+.booking-card__text .bookinfo {
+    font-size: large;
+}
+
+.booking-card__text .data {
+    margin-bottom: 20px;
+    font-size: medium;
+}
+
+.booking-card__button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.delete-button{
+    color: var(--white);
+    border: 0px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-top: 3rem;
+    cursor: pointer;
+    float: none;
+    padding-inline: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: var(--primary);
+}

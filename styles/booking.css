@@ -4,6 +4,14 @@
 .booking__section {
     margin-top: 12rem;
     height: 100rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
 }
 
 .form {
@@ -13,14 +21,6 @@
     border-radius: 0.8rem;
     padding: 2rem;
     box-shadow: 0 0.2rem 0.6rem #e75a7c;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    min-height: 100vh;
 }
 
 form {

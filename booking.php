@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/booking.css">
-    <link rel="stylesheet" href="styles/rooms.css">
+    <link rel="stylesheet" href="styles/myBooking.css">
     <link rel="icon" href="img/assets/house.png">
     <title>bilikLAH</title>
 </head>
@@ -36,31 +36,37 @@
         </nav>
     </header>
 
-    <section class="room-list__section">
-    <h1 class="header-text">My Bookings</h1>
-    <div class="room-list__rooms">
-    <?php
+    <section class="booking-list__section">
+        <h1 class="header-text">My Bookings</h1>
+        <div class="booking-list__booking">
+            <?php
 
-$sql = "SELECT * FROM Room
-        INNER JOIN Booking ON Room.roomID = Booking.roomID";
+            $sql = "SELECT * FROM Room
+                    INNER JOIN Booking ON Room.roomID = Booking.roomID";
 
-$data = mysqli_query($connect, $sql);
+            $data = mysqli_query($connect, $sql);
 
+                while ($bookingInfo = mysqli_fetch_assoc($data)) {
 
-    while ($bookingInfo = mysqli_fetch_assoc($data)) {
+                    echo "<form class='booking-list__booking-card' action='deleteBooking.php' method='POST'>";
+                        echo "<h1 id='card-header'>$bookingInfo[roomName]</h1>";
+                        echo "<div class='booking-card__text'>";
+                           
+                            echo "<input type='text' value='$bookingInfo[bookingID]' name='bookingID' class='ID' hidden/>";
+                            echo "<h1 class='bookinfo'>Room Name:</h1> <p class='data'>$bookingInfo[roomName]</p>";
+                            echo "<h1 class='bookinfo'>Room Price:</h1> <p class='data'>RM$bookingInfo[roomPrice]/night</p>";
+                            echo "<h1 class='bookinfo'>Check In:</h1> <p class='data'>$bookingInfo[dateBegin]</p>";
+                            echo "<h1 class='bookinfo'>Check Out:</h1> <p class='data'>$bookingInfo[dateEnd]</p>";
 
-        echo "<div class='room-list__room-card'>";
-                        echo "<div class='room-card__text'>";
-                        
-                            echo "<h1 class='bookinfo'>Room Name: $bookingInfo[roomName]</h1>";
-                            echo "<h1 class='bookinfo'>Room Price: RM$bookingInfo[roomPrice]/night</h1>";
-                            echo "<h1 class='bookinfo'>Check In: $bookingInfo[dateBegin]</h1>";
-                            echo "<h1 class='bookinfo'>Check Out: $bookingInfo[dateEnd]</h1>";
                         echo "</div>";
-        echo "</div>";
-    }
-?>
-    </div>
-</section>
+
+                        echo "<div class='booking-card__button'>";
+                            echo "<input type='submit' value='Delete' class='delete-button' name='delete'/>";
+                        echo "</div>";             
+                    echo "</form>";
+                }
+            ?>
+        </div>
+    </section>
 </body>
 </html>
