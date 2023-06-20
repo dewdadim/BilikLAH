@@ -14,7 +14,7 @@
     }
         
     else{
-        echo "<script>alert('Remove Room not successful!')</script>";
+        echo "<script>alert('Remove Room not successful! Someone has already booked your room')</script>";
         echo "<script>window.location='rooms_owner.php'</script>";
     }
         

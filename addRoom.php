@@ -1,7 +1,66 @@
 <?php
     include('php/connect.php');
     session_start();
+
+    if(isset($_POST['roomName'])) {
+        $roomName = $_POST['roomName'];
+        $roomPrice = $_POST['roomPrice'];
+        $roomCapacity = $_POST['roomCapacity'];
+        $ownerEmail = $_SESSION['email'];
+
+        if($_FILES["image"]["error"] === 4){
+            echo
+            "<script> alert('Image Does Not Exist'); </script>"
+            ;
+          }
+          else{
+            $fileName = $_FILES["image"]["name"];
+            $fileSize = $_FILES["image"]["size"];
+            $tmpName = $_FILES["image"]["tmp_name"];
+        
+            $validImageExtension = ['jpg', 'jpeg', 'png'];
+            $imageExtension = explode('.', $fileName);
+            $imageExtension = strtolower(end($imageExtension));
+            if ( !in_array($imageExtension, $validImageExtension) ){
+              echo
+              "
+              <script>
+                alert('Invalid Image Extension');
+              </script>
+              ";
+            }
+            else if($fileSize > 1000000){
+              echo
+              "
+              <script>
+                alert('Image Size Is Too Large');
+              </script>
+              ";
+            }
+            else{
+              $newImageName = uniqid();
+              $newImageName .= '.' . $imageExtension;
+        
+              move_uploaded_file($tmpName, 'img/room_img/' . $newImageName);
+
+              $sql = "INSERT INTO Room (roomName, roomPrice, roomCapacity, roomImg, ownerEmail)
+                VALUE ('$roomName', $roomPrice, $roomCapacity, 'img/room_img/$newImageName', '$ownerEmail')";
+
+              $data = mysqli_query($connect, $sql);
+
+              echo mysqli_error($connect);
+              if ($data) 
+                      echo "<script>alert('Thank you for Booking!')</script>";
+              else 
+                  echo "<script>alert('Error to Book')</script>"; 
+              echo "<script>window.location='rooms_owner.php'</script>";
+            }
+        }
+
+    }
+    
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +81,7 @@
             <div>
                 <ul class="nav-links">
                     <li><a href="rooms_owner.php">My Rooms</a></li>
-                    <li><a href="addRoom.php">Add Room</a></li>
+                    <li><a href="addRoom.html">Add Room</a></li>
                     <li>
                         <?php
                             $name = $_SESSION['name'];
@@ -59,10 +118,10 @@
     }
 </script> -->
 
-    <main class="container">
-        <div class="form">
+    <section class="container add-room__section">
+        <div class="add-room__form">
             <h1 id="h1">ADD ROOM</h1>
-            <form action="addRoom.php" method="POST" enctype="multipart/form-data">
+            <form action="addRoom.php" method="POST" autocomplete="off" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="roomName">Room Name:</label>
                     <input type="text" id="roomName" name="roomName" required>
@@ -70,22 +129,22 @@
 
                 <div class="form-group">
                     <label for="roomPrice">Room Price:</label>
-                    <input type="text" id="roomPrice" name="roomPrice" required>
+                    <input type="number" id="roomPrice" name="roomPrice" required>
                 </div>
 
                 <div class="form-group">
                     <label for="roomCapacity">Room Capacity:</label>
-                    <input type="text" id="roomCapacity" name="roomCapacity" required>
+                    <input type="number" id="roomCapacity" name="roomCapacity" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="RoomImage">Room Image:</label>
-                    <input type="file" id="RoomImage" name="RoomImage" accept="image/*">
+                    <label for="image">Room Image:</label><br>
+                    <input type="file" id="image" name="image" accept=".jpg, .jpeg, .png" value="" required>
                 </div>
 
-                <button type="submit" onclick="showSuccessMessage()">Submit</button>
+                <input type="submit" value="Submit">
             </form>
         </div>
-    </main>
+    </section>
 </body>
 </html>

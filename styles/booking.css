@@ -50,7 +50,8 @@ label {
 
 input[type="text"],
 input[type="date"],
-option,
+input[type="number"],
+select,
 textarea {
     width: 40rem;
     padding: 1.2rem;
@@ -63,6 +64,8 @@ textarea {
 
 input[type="text"]:focus,
 input[type="date"]:focus,
+input[type="number"]:focus,
+select:focus,
 textarea:focus {
     outline: none;
     border-color: var(--primary);
@@ -73,7 +76,7 @@ textarea {
     resize: vertical;
 }
 
-button[type="submit"] {
+button[type="submit"], input[type=submit] {
     background-color: var(--primary);
     color: var(--white);
     padding: 1.5rem 3rem;
@@ -84,6 +87,32 @@ button[type="submit"] {
     transition: background-color 0.3s ease;
 }
 
-button[type="submit"]:hover {
+button[type="submit"]:hover, input[type=submit]:hover {
     background-color: var(--secondary);
+}
+
+.add-room__section {
+    height: 100vh;
+}
+
+.add-room__form {
+    width: 100%;
+    max-width: 50rem; 
+    background-color: var(--white);
+    border-radius: 0.8rem;
+    padding: 2rem;
+    box-shadow: 0 0.2rem 0.6rem #e75a7c;
+    margin-top: 20rem;
+    position: relative;
+    float: none;
+    border-radius: 25px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 1rem;
+}
+
+.add-room__form h1{
+    text-align: center;
+    font-size: xx-large;
+    margin-bottom: 4rem;
 }

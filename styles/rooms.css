@@ -1,7 +1,7 @@
 .room-list__section {
     margin-top: 12rem;
     padding-inline: 10rem;
-    height: 50em;
+    height: auto;
 }
 
 .header-text {
