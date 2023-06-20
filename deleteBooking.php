@@ -8,14 +8,26 @@
     $result = mysqli_query($connect, $sqlDel);
 
     echo $bookingID;
-    if ($result == true){
-        echo "<script>alert('Remove Booking successful!')</script>";
-        echo "<script>window.location='booking.php'</script>";
+    if(isset($_POST['reject'])) {
+        if ($result == true){
+            echo "<script>alert('Reject Booking successful!')</script>";
+            echo "<script>window.location='viewBooking.php'</script>";
+        } 
+        else{
+            echo "<script>alert('Reject Booking not successful!')</script>";
+            echo "<script>window.location='viewBooking.php'</script>";
+        }
     }
-        
-    else{
-        echo "<script>alert('Remove Booking not successful!')</script>";
-        echo "<script>window.location='booking.php'</script>";
+    else {
+        if ($result == true){
+            echo "<script>alert('Delete Booking successful!')</script>";
+            echo "<script>window.location='booking.php'</script>";
+        } 
+        else{
+            echo "<script>alert('Delete Booking not successful!')</script>";
+            echo "<script>window.location='booking.php'</script>";
+        }
     }
+    
         
 ?>

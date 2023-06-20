@@ -3,25 +3,26 @@
     include('dataSort.php');
     session_start();
 
+    $id = $_SESSION['email'];
     
     if(isset($_POST['sortPriceLH'])) {
-        $_SESSION['sort'] = "SELECT * FROM Room ORDER BY roomPrice ASC";
+        $_SESSION['sort'] = "SELECT * FROM Room WHERE ownerEmail = '$id' ORDER BY roomPrice ASC";
     }
 
     else if(isset($_POST['sortPriceHL'])) {
-        $_SESSION['sort'] = "SELECT * FROM Room ORDER BY roomPrice DESC";
+        $_SESSION['sort'] = "SELECT * FROM Room WHERE ownerEmail = '$id' ORDER BY roomPrice DESC";
     }
 
     else if(isset($_POST['sortCapacityLH'])) {
-        $_SESSION['sort'] = "SELECT * FROM Room ORDER BY roomCapacity ASC";
+        $_SESSION['sort'] = "SELECT * FROM Room WHERE ownerEmail = '$id' ORDER BY roomCapacity ASC";
     }
 
     else if(isset($_POST['sortCapacityHL'])) {
-        $_SESSION['sort'] = "SELECT * FROM Room ORDER BY roomCapacity DESC";
+        $_SESSION['sort'] = "SELECT * FROM Room WHERE ownerEmail = '$id' ORDER BY roomCapacity DESC";
     }
 
     else {
-        $_SESSION['sort'] = "SELECT * FROM Room";
+        $_SESSION['sort'] = "SELECT * FROM Room WHERE ownerEmail = '$id'";
     }
 ?>
 ?>
@@ -49,6 +50,7 @@
                 <ul class="nav-links">
                     <li><a href="rooms_owner.php">My Rooms</a></li>
                     <li><a href="addRoom.php">Add Room</a></li>
+                    <li><a href="viewBooking.php">View Bookings</a></li>
                     <li>
                         <?php
                             $name = $_SESSION['name'];
@@ -70,10 +72,10 @@
         </form>
         <div class="room-list__rooms">
             <?php
-                $id = $_SESSION['email'];
+
                 $sql = $_SESSION['sort'];
                 $data = mysqli_query($connect, $sql);
-
+                
                 while ($room = mysqli_fetch_array($data)){
                     echo "<form class='room-list__room-card' action='deleteRoom.php' method='POST'>";
                         echo "<img src='$room[roomImg]'/>";
