@@ -18,7 +18,7 @@
     <header>
         <nav class="nav-bar">
             <div class="logo">
-                <a href="biliklah/rooms.html"><h1>BilikLAH</h1></a>
+                <a href="rooms.php"><h1>BilikLAH</h1></a>
             </div>
             <div>
                 <ul class="nav-links">
@@ -41,29 +41,31 @@
         <div class="booking-list__booking">
             <?php
 
-            $sql = "SELECT * FROM Room
-                    INNER JOIN Booking ON Room.roomID = Booking.roomID";
+            $id = $_SESSION['email'];
+            $sql = "SELECT * FROM Room, Booking, RoomOwner WHERE 
+                    Room.roomID = Booking.roomID AND Room.OwnerEmail = RoomOwner.OwnerEmail AND Booking.customerEmail = '$id'";
 
             $data = mysqli_query($connect, $sql);
 
                 while ($bookingInfo = mysqli_fetch_assoc($data)) {
 
-                    echo "<form class='booking-list__booking-card' action='deleteBooking.php' method='POST'>";
+                    echo "<div class='booking-list__booking-card'>";
                         echo "<h1 id='card-header'>$bookingInfo[roomName]</h1>";
                         echo "<div class='booking-card__text'>";
                            
-                            echo "<input type='text' value='$bookingInfo[bookingID]' name='bookingID' class='ID' hidden/>";
                             echo "<h1 class='bookinfo'>Room Name:</h1> <p class='data'>$bookingInfo[roomName]</p>";
                             echo "<h1 class='bookinfo'>Room Price:</h1> <p class='data'>RM$bookingInfo[roomPrice]/night</p>";
                             echo "<h1 class='bookinfo'>Check In:</h1> <p class='data'>$bookingInfo[dateBegin]</p>";
                             echo "<h1 class='bookinfo'>Check Out:</h1> <p class='data'>$bookingInfo[dateEnd]</p>";
+                            echo "<h1 class='bookinfo'>Owner Phone Number:</h1> <p class='data'>$bookingInfo[ownerPhone]</p>";
 
                         echo "</div>";
 
-                        echo "<div class='booking-card__button'>";
+                        echo "<form class='booking-card__button' action='deleteBooking.php' method='POST'>";
+                            echo "<input type='text' value='$bookingInfo[bookingID]' name='bookingID' class='ID' hidden/>";
                             echo "<input type='submit' value='Delete' class='delete-button' name='delete'/>";
-                        echo "</div>";             
-                    echo "</form>";
+                        echo "</form>";             
+                    echo "</div>";
                 }
             ?>
         </div>

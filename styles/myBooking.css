@@ -3,7 +3,7 @@
 .booking-list__section {
     margin-top: 12rem;
     padding-inline: 10rem;
-    height: 50em;
+    height: auto;
 }
 
 .header-text {
@@ -28,7 +28,7 @@
 
 #card-header {
     padding-bottom: 1em;
-    font-size: x-large;
+    font-size: 32px;
 }
 
 .booking-card__text {

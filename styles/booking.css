@@ -89,10 +89,6 @@ button[type="submit"]:hover, input[type=submit]:hover {
     background-color: var(--secondary);
 }
 
-.add-room__section {
-    height: 100vh;
-}
-
 .add-room__form {
     width: 100%;
     max-width: 50rem; 

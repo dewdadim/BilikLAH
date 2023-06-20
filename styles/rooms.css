@@ -33,8 +33,8 @@
 }
 
 .room-name {
-    font-size: 3rem;
-    font-weight: 400;
+    font-size: 3.5rem;
+    font-weight: bold;
 }
 
 .room-price {
@@ -53,4 +53,18 @@
     object-fit: cover;
     margin-bottom: 20px;
     border-radius: 25px;
+}
+
+.sorting-section {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.sorting-section input[submit] {
+    background-color: var(--white) !important;
+    border: 1px solid var(--black) !important;
+    color: var(--black) !important;
+    font-size: 24px !important;
 }

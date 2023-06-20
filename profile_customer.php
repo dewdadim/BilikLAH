@@ -65,7 +65,7 @@ $customer = mysqli_fetch_array($data);
     <header>
         <nav class="nav-bar">
             <div class="logo">
-                <a href="/index.html"><h1>BilikLAH</h1></a>
+                <a href="rooms.php"><h1>BilikLAH</h1></a>
             </div>
             <div>
                 <ul class="nav-links">

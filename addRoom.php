@@ -50,9 +50,9 @@
 
               echo mysqli_error($connect);
               if ($data) 
-                      echo "<script>alert('Thank you for Booking!')</script>";
+                      echo "<script>alert('Add Room Successful!')</script>";
               else 
-                  echo "<script>alert('Error to Book')</script>"; 
+                  echo "<script>alert('Error to add new room')</script>"; 
               echo "<script>window.location='rooms_owner.php'</script>";
             }
         }
@@ -76,7 +76,7 @@
     <header>
         <nav class="nav-bar">
             <div class="logo">
-                <a href=""><h1>BilikLAH</h1></a>
+                <a href="rooms_owner.php"><h1>BilikLAH</h1></a>
             </div>
             <div>
                 <ul class="nav-links">
@@ -129,12 +129,12 @@
 
                 <div class="form-group">
                     <label for="roomPrice">Room Price:</label>
-                    <input type="number" id="roomPrice" name="roomPrice" required>
+                    <input type="number" id="roomPrice" name="roomPrice" min="0" required>
                 </div>
 
                 <div class="form-group">
                     <label for="roomCapacity">Room Capacity:</label>
-                    <input type="number" id="roomCapacity" name="roomCapacity" required>
+                    <input type="number" id="roomCapacity" name="roomCapacity" min="0" required>
                 </div>
 
                 <div class="form-group">

@@ -35,7 +35,7 @@ if (isset($_POST['email']))
             {
                 $found = TRUE;
                 $_SESSION['email'] = $customer['customerEmail'];
-                $_SESSION['name'] = substr($customer['customerName'], 0);
+                $_SESSION['name'] = $customer['customerName'];
                 $_SESSION['status'] = 'customer';
                 break;
             }

@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/rooms.css">
     <link rel="stylesheet" href="styles/booking.css">
+    <script src="javascript/inputValidation.js"></script>
 
     <link rel="icon" href="img/assets/house.png">
     <title>bilikLAH</title>
@@ -20,7 +21,7 @@
     <header>
         <nav class="nav-bar">
             <div class="logo">
-                <a href="biliklah/rooms.html"><h1>BilikLAH</h1></a>
+                <a href="biliklah/rooms.php"><h1>BilikLAH</h1></a>
             </div>
             <div>
                 <ul class="nav-links">
@@ -39,6 +40,10 @@
     </header>
     <section class="room-list__section">
         <h1 class="header-text">Room List</h1>
+        <form class="sorting-section" action="addBooking.php" method="POST">
+            <input type="submit" value="Sort Price: Low -> High" name="sortPriceLH"/>
+            <input type="submit" value="Sort Price: High -> Low" name="sortPriceLH"/>
+        </form>
         <div class="room-list__rooms">
             <?php
 
@@ -62,7 +67,7 @@
         <div class="booking__section">
             <div class="form">
                 <h1 id="h1">BOOK ROOM</h1>
-                <form action="addBooking.php" method="POST">
+                <form action="addBooking.php" method="POST" onSubmit = "return checkBookingTime(this)">
                     <div class="form-group">
                         <label for="beginDate">Check In:</label><br>
                         <input type="date" id="beginDate" name="beginDate" required>
