@@ -27,7 +27,7 @@
     </header>
     <div class="wrapper">
         <h1 id="welcome">Sign Up!</h1>
-        <form class="register" action="register-customer.php" method="post">
+        <form class="register" onSubmit = "return checkPassword(this)" action="register-customer.php" method="post">
             <label for="name"><h3>Name</h3></label>
             <input type="text" name="name" required><br>
 
