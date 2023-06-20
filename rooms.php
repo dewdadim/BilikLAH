@@ -1,6 +1,20 @@
 <?php
     include('php/connect.php');
+    include('dataSort.php');
     session_start();
+
+    
+    if(isset($_POST['sortPriceLH'])) {
+        $sql = "SELECT * FROM Room ORDER BY roomPrice ASC";
+    }
+
+    else if(isset($_POST['sortPriceHL'])) {
+        $sql = "SELECT * FROM Room ORDER BY roomPrice DESC";
+    }
+
+    else {
+        $sql = "SELECT * FROM Room";
+    }
 ?>
 
 <!DOCTYPE html>
@@ -40,14 +54,13 @@
     </header>
     <section class="room-list__section">
         <h1 class="header-text">Room List</h1>
-        <form class="sorting-section" action="addBooking.php" method="POST">
+        <form class="sorting-section" action="rooms.php" method="POST">
             <input type="submit" value="Sort Price: Low -> High" name="sortPriceLH"/>
-            <input type="submit" value="Sort Price: High -> Low" name="sortPriceLH"/>
+            <input type="submit" value="Sort Price: High -> Low" name="sortPriceHL"/>
         </form>
         <div class="room-list__rooms">
             <?php
 
-                $sql = "SELECT * FROM Room";
                 $data = mysqli_query($connect, $sql);
 
                 while ($room = mysqli_fetch_array($data)){
