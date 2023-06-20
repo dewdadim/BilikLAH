@@ -19,7 +19,7 @@ if (isset($_POST['email']))
         {
             $found = TRUE;
             $_SESSION['email'] = $owner['ownerEmail'];
-            $_SESSION['name'] = $owner['ownerName'];
+            $_SESSION['name'] = substr($owner['ownerName'], 0);
             $_SESSION['status'] = 'owner';
             break;
         }
@@ -35,7 +35,7 @@ if (isset($_POST['email']))
             {
                 $found = TRUE;
                 $_SESSION['email'] = $customer['customerEmail'];
-                $_SESSION['name'] = $customer['customerName'];
+                $_SESSION['name'] = substr($customer['customerName'], 0);
                 $_SESSION['status'] = 'customer';
                 break;
             }

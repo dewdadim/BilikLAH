@@ -1,50 +1,50 @@
 <?php
-include('php/connect.php');
-session_start();
+    include('php/connect.php');
+    session_start();
 
-$ownerName = $_POST['ownerName'];
-$ownerPhone = $_POST['ownerPhone'];
-$ownerPassword = $_POST['ownerPassword'];
+    $ownerName = $_POST['ownerName'];
+    $ownerPhone = $_POST['ownerPhone'];
+    $ownerPassword = $_POST['ownerPassword'];
 
-$id = $_SESSION['email'];
+    $id = $_SESSION['email'];
 
-$updateName = "UPDATE RoomOwner SET ownerName = '$ownerName'  WHERE ownerEmail = '$id'";
-$updatePhone = "UPDATE RoomOwner SET  ownerPhone = '$ownerPhone' WHERE ownerEmail = '$id'";
-$updatePassword = "UPDATE RoomOwner SET  ownerPassword = '$ownerPassword' WHERE ownerEmail = '$id'";
+    $updateName = "UPDATE RoomOwner SET ownerName = '$ownerName'  WHERE ownerEmail = '$id'";
+    $updatePhone = "UPDATE RoomOwner SET  ownerPhone = '$ownerPhone' WHERE ownerEmail = '$id'";
+    $updatePassword = "UPDATE RoomOwner SET  ownerPassword = '$ownerPassword' WHERE ownerEmail = '$id'";
 
 
- 
-if (isset($_POST['save-name'])){
-    if (mysqli_query($connect,$updateName)) {
-        echo " <script>alert('Update Successful!');
-        window.location='profile_owner.php'</script> ";
-    } else {
-        echo "Error updating fields: " . mysqli_error($connect);
+    
+    if (isset($_POST['save-name'])){
+        if (mysqli_query($connect,$updateName)) {
+            echo " <script>alert('Update Successful!');
+            window.location='profile_owner.php'</script> ";
+        } else {
+            echo "Error updating fields: " . mysqli_error($connect);
+        }
     }
- }
 
- if (isset($_POST['save-phone'])){
-    if (mysqli_query($connect,$updatePhone)) {
-        echo " <script>alert('Update Successful!');
-        window.location='profile_owner.php'</script> ";
-    } else {
-        echo "Error updating fields: " . mysqli_error($connect);
+    if (isset($_POST['save-phone'])){
+        if (mysqli_query($connect,$updatePhone)) {
+            echo " <script>alert('Update Successful!');
+            window.location='profile_owner.php'</script> ";
+        } else {
+            echo "Error updating fields: " . mysqli_error($connect);
+        }
     }
- }
 
 
- if (isset($_POST['save-password'])){
-    if (mysqli_query($connect,$updatePassword)) {
-        echo " <script>alert('Update Successful!');
-        window.location='profile_owner.php'</script> ";
-    } else {
-        echo "Error updating fields: " . mysqli_error($connect);
+    if (isset($_POST['save-password'])){
+        if (mysqli_query($connect,$updatePassword)) {
+            echo " <script>alert('Update Successful!');
+            window.location='profile_owner.php'</script> ";
+        } else {
+            echo "Error updating fields: " . mysqli_error($connect);
+        }
     }
-}
 
-$query = "SELECT * FROM RoomOwner";
-$data = mysqli_query($connect, $query);
-$customer = mysqli_fetch_array($data);
+    $query = "SELECT * FROM RoomOwner";
+    $data = mysqli_query($connect, $query);
+    $customer = mysqli_fetch_array($data);
 ?>
 
 <!DOCTYPE html>
@@ -56,9 +56,6 @@ $customer = mysqli_fetch_array($data);
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/profile.css">
     
-    
-    
-    <link rel="icon" href="img/assets/house.png">
     <link rel="icon" href="img/assets/house.png">
     <title>Owner Profile</title>
 </head>
@@ -71,7 +68,7 @@ $customer = mysqli_fetch_array($data);
             <div>
                 <ul class="nav-links">
                     <li><a href="rooms_owner.php">My Rooms</a></li>
-                    <li><a href="addRoom.html">Add Room</a></li>
+                    <li><a href="addRoom.php">Add Room</a></li>
                     <li>
                         <?php
                             $name = $_SESSION['name'];
