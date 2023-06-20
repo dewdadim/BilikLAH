@@ -41,7 +41,7 @@
     <title>bilikLAH</title>
 </head>
 <body>
-    <header>
+<header>
         <nav class="nav-bar">
             <div class="logo">
                 <a href="rooms_owner.php"><h1>BilikLAH</h1></a>

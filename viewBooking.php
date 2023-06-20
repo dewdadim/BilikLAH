@@ -15,7 +15,7 @@
     <title>bilikLAH</title>
 </head>
 <body>
-    <header>
+<header>
         <nav class="nav-bar">
             <div class="logo">
                 <a href="rooms_owner.php"><h1>BilikLAH</h1></a>
@@ -23,12 +23,12 @@
             <div>
                 <ul class="nav-links">
                     <li><a href="rooms_owner.php">My Rooms</a></li>
-                    <li><a href="addRoom.php">Add Rooms</a></li>
-                    <li><a href="viewBooking.php">View Booking</a></li>
+                    <li><a href="addRoom.php">Add Room</a></li>
+                    <li><a href="viewBooking.php">View Bookings</a></li>
                     <li>
                         <?php
                             $name = $_SESSION['name'];
-                            echo "<a href='owner_customer.php'>Hello, $name</a>";
+                            echo "<a href='profile_owner.php'>Hello, $name</a>";
                         ?>
                     </li>
                     <li><a href="php/logout.php">Logout</a></li>
