@@ -86,9 +86,9 @@
                             echo "<h1 class='room-price'>RM$room[roomPrice] /night</h1>";
                             echo "<h1 class='room-capacity'>$room[roomCapacity] persons</h1>";
 
-                            echo "<input type='submit' value='Delete' class='delete-button' name='delete'/>"; 
-                        echo "</form>";
-                    echo "</div>";
+                        echo "</div><br>";
+                        echo "<input type='submit' value='Delete' class='delete-button' name='delete'/>"; 
+                    echo "</form>";
                 }
             ?>
         </div>

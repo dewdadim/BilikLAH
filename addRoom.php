@@ -124,17 +124,17 @@
             <h1 id="h1">ADD ROOM</h1>
             <form action="addRoom.php" method="POST" autocomplete="off" enctype="multipart/form-data">
                 <div class="form-group">
-                    <label for="roomName">Room Name:</label>
+                    <label for="roomName">Room Name:</label><br>
                     <input type="text" id="roomName" name="roomName" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="roomPrice">Room Price:</label>
+                    <label for="roomPrice">Room Price:</label><br>
                     <input type="number" id="roomPrice" name="roomPrice" min="0" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="roomCapacity">Room Capacity:</label>
+                    <label for="roomCapacity">Room Capacity:</label><br>
                     <input type="number" id="roomCapacity" name="roomCapacity" min="0" required>
                 </div>
 
