@@ -47,26 +47,32 @@
 
             $data = mysqli_query($connect, $sql);
 
-                while ($bookingInfo = mysqli_fetch_assoc($data)) {
+                if($data->num_rows > 0){
+                    while ($bookingInfo = mysqli_fetch_assoc($data)) {
 
-                    echo "<div class='booking-list__booking-card'>";
-                        echo "<h1 id='card-header'>$bookingInfo[roomName]</h1>";
-                        echo "<div class='booking-card__text'>";
-                           
-                            echo "<h1 class='bookinfo'>Room Name:</h1> <p class='data'>$bookingInfo[roomName]</p>";
-                            echo "<h1 class='bookinfo'>Room Price:</h1> <p class='data'>RM$bookingInfo[roomPrice]/night</p>";
-                            echo "<h1 class='bookinfo'>Check In:</h1> <p class='data'>$bookingInfo[dateBegin]</p>";
-                            echo "<h1 class='bookinfo'>Check Out:</h1> <p class='data'>$bookingInfo[dateEnd]</p>";
-                            echo "<h1 class='bookinfo'>Owner Phone Number:</h1> <p class='data'>$bookingInfo[ownerPhone]</p>";
+                        echo "<div class='booking-list__booking-card'>";
+                            echo "<h1 id='card-header'>$bookingInfo[roomName]</h1>";
+                            echo "<div class='booking-card__text'>";
+                            
+                                echo "<h1 class='bookinfo'>Room Name:</h1> <p class='data'>$bookingInfo[roomName]</p>";
+                                echo "<h1 class='bookinfo'>Room Price:</h1> <p class='data'>RM$bookingInfo[roomPrice]/night</p>";
+                                echo "<h1 class='bookinfo'>Check In:</h1> <p class='data'>$bookingInfo[dateBegin]</p>";
+                                echo "<h1 class='bookinfo'>Check Out:</h1> <p class='data'>$bookingInfo[dateEnd]</p>";
+                                echo "<h1 class='bookinfo'>Owner Phone Number:</h1> <p class='data'>$bookingInfo[ownerPhone]</p>";
 
+                            echo "</div>";
+
+                            echo "<form class='booking-card__button' action='deleteBooking.php' method='POST'>";
+                                echo "<input type='text' value='$bookingInfo[bookingID]' name='bookingID' class='ID' hidden/>";
+                                echo "<input type='submit' value='Delete' class='delete-button' name='delete'/>";
+                            echo "</form>";             
                         echo "</div>";
-
-                        echo "<form class='booking-card__button' action='deleteBooking.php' method='POST'>";
-                            echo "<input type='text' value='$bookingInfo[bookingID]' name='bookingID' class='ID' hidden/>";
-                            echo "<input type='submit' value='Delete' class='delete-button' name='delete'/>";
-                        echo "</form>";             
-                    echo "</div>";
+                    }
                 }
+                else {
+                    echo "<h1>You have not book any room. <a href='rooms.php' style='color: var(--secondary)'>Add Booking</a></h1>";
+                }
+                
             ?>
         </div>
     </section>

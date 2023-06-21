@@ -76,20 +76,26 @@
                 $sql = $_SESSION['sort'];
                 $data = mysqli_query($connect, $sql);
                 
-                while ($room = mysqli_fetch_array($data)){
-                    echo "<form class='room-list__room-card' action='deleteRoom.php' method='POST'>";
-                        echo "<img src='$room[roomImg]'/>";
-                        echo "<div class='room-card__text'>";
+                if($data->num_rows > 0){
+                    while ($room = mysqli_fetch_array($data)){
+                        echo "<form class='room-list__room-card' action='deleteRoom.php' method='POST'>";
+                            echo "<img src='$room[roomImg]'/>";
+                            echo "<div class='room-card__text'>";
 
-                            echo "<input type='text' value='$room[roomID]' name='roomID' class='ID' hidden/>";
-                            echo "<h1 class='room-name'>$room[roomName]</h1>";
-                            echo "<h1 class='room-price'>RM$room[roomPrice] /night</h1>";
-                            echo "<h1 class='room-capacity'>$room[roomCapacity] persons</h1>";
+                                echo "<input type='text' value='$room[roomID]' name='roomID' class='ID' hidden/>";
+                                echo "<h1 class='room-name'>$room[roomName]</h1>";
+                                echo "<h1 class='room-price'>RM$room[roomPrice] /night</h1>";
+                                echo "<h1 class='room-capacity'>$room[roomCapacity] persons</h1>";
 
-                        echo "</div><br>";
-                        echo "<input type='submit' value='Delete' class='delete-button' name='delete'/>"; 
-                    echo "</form>";
+                            echo "</div><br>";
+                            echo "<input type='submit' value='Delete' class='delete-button' name='delete'/>"; 
+                        echo "</form>";
+                    }
                 }
+                else {
+                    echo "<h1>There is no room stored in database. <a href='addRoom.php' style='color: var(--secondary)'>Add room</a></h1>";
+                }
+                
             ?>
         </div>
     </section>
